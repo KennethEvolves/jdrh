@@ -120,7 +120,7 @@ FontAwesomeAsset::register($this);
 
         // echo Html::tag('div',Html::a('Estados',['/estado/index'],
         //                                 ['class' => ['btn btn-link login text-decoration-none']]),
-        //                                 ['class' => ['d-flex']]);      
+        //                                 ['class' => ['d-flex']]);
     }   
 
     echo Nav::widget([
