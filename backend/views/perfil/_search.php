@@ -29,6 +29,9 @@ use frontend\models\Perfil;
 
     <?= $form->field($model, 'genero_id')->dropDownList(Perfil::getGeneroLista(), 
                                          [ 'prompt' => 'Por Favor Elija Uno' ]);?>
+    <?= $form->field($model, 'telefono') ?>
+
+    <?= $form->field($model, 'pagina_web') ?>
 
     <?php // echo $form->field($model, 'genero_id') ?>
 
@@ -39,6 +42,7 @@ use frontend\models\Perfil;
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+
     </div>
 
     <?php ActiveForm::end(); ?>

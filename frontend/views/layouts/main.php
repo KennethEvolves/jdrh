@@ -30,7 +30,7 @@ AppAsset::register($this);
 <header>
     <?php
     NavBar::begin([
-        'brandLabel' => 'Sistema XXX',   //Yii::$app->name,
+        'brandLabel' => 'Sistema JDRH',   //Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
@@ -83,7 +83,7 @@ AppAsset::register($this);
 
 <footer class="footer mt-auto py-3 text-muted">
     <div class="container">
-        <p class="float-start">&copy; Dr. Rusell Renan Iuit Manzanero <?= date('Y') ?></p>
+        <p class="float-start">&copy;  <?= date('Y') ?></p>
         <p class="float-end"><?= Yii::powered() ?></p>
     </div>
 </footer>

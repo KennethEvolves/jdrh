@@ -19,6 +19,8 @@ use yii\helpers\Html;
  * @property string $nombre
  * @property string $apellido
  * @property string $fecha_nacimiento
+ * @property int $telefono
+ * @property string $pagina_web
  * @property integer $genero_id
  * @property string $created_at
  * @property string $updated_at
@@ -62,8 +64,10 @@ class Perfil extends \yii\db\ActiveRecord
             [['user_id', 'genero_id'], 'integer'],
             [['genero_id'],'in', 'range'=>array_keys($this->getGeneroLista())],
             [['nombre', 'apellido'], 'string'],
+            [['telefono'],'integer'],
+            [['pagina_web'], 'string'],
             [['fecha_nacimiento', 'created_at', 'updated_at'], 'safe'],
-            [['fecha_nacimiento'], 'date', 'format'=>'Y-m-d']
+            [['fecha_nacimiento'], 'date', 'format'=>'yyyy-MM-dd']
         ];
     }
 
@@ -78,7 +82,7 @@ class Perfil extends \yii\db\ActiveRecord
             'nombre' => 'Nombre',
             'apellido' => 'Apellido',
             'fecha_nacimiento' => 'Fecha Nacimiento',
-            'genero_id' => 'Genero ID',
+            'pagina_web' => 'Pagina Web',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'generoNombre' => Yii::t('app', 'Genero'),

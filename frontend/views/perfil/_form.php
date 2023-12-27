@@ -30,6 +30,12 @@ use  yii\jui\DatePicker;
 
     <?= $form->field($model, 'genero_id')->dropDownList($model->generoLista, ['prompt' => 'Seleccione el genero' ]);?>
 
+    <!-- Agrega el campo 'telefono' -->
+    <?= $form->field($model, 'telefono')->textInput() ?>
+
+    <!-- Agrega el campo 'pagina_web' -->
+    <?= $form->field($model, 'pagina_web')->textInput(['maxlength' => 255]) ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

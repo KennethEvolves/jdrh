@@ -56,7 +56,7 @@ FontAwesomeAsset::register($this);
             $menuItems = [ ]; // Se manejo este arreglo vacio para poder alinear a la derecha el menu en Backend
     }else {
         NavBar::begin([
-            'brandLabel' => 'Sistema XXX',            //Yii::$app->name,
+            'brandLabel' => 'Sistema JDRH',            //Yii::$app->name,
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
@@ -88,14 +88,14 @@ FontAwesomeAsset::register($this);
                         ['label' => 'Estados Usuarios', 'url' => ['/estado']],                                               
                     ],
             ];
-            $menuItems[] = ['label' => 'Catalogos', 'url' => ['/site/index'],
+            $menuItems[] = ['label' => 'Control Escolar', 'url' => ['/site/index'],
             'options' =>['class' =>'dropdown'],
             'template'=>'<a href="{url}" class="href_class">{label}</a>',
             'items' =>[ ['label' => 'Productos', 'url' => ['/asignatura']],
             
                         ],
             ]; 
-            $menuItems[] = ['label' => 'Transacciones', 'url' => ['/site/index'],
+            $menuItems[] = ['label' => 'Tutorías', 'url' => ['/site/index'],
             'options' =>['class' =>'dropdown'],
             'template'=>'<a href="{url}" class="href_class">{label}</a>',
             'items' =>[ ['label' => 'Ventas', 'url' => ['/asignatura']],
@@ -163,9 +163,9 @@ FontAwesomeAsset::register($this);
 <footer class="footer mt-auto py-3 text-muted">
     <div class="container">
         <p class="float-start">&copy;
-                                      <!-- <?= Html::encode('Sistema XXX') ?> -->
+                                      <!-- <?= Html::encode('Sistema JDRH') ?> -->
                                       <?= date('Y')?>
-                                      <spam></spam>Dr. Rusell Renan Iuit Manzanero
+                                      <spam></spam> Ing. Sistemas Computacionales
         </p>
         <!-- <p class="float-end"><?= Yii::powered() ?></p> -->
     </div>

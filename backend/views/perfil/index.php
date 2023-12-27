@@ -52,6 +52,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'nombre:ntext',
             'apellido:ntext',
             'fecha_nacimiento',
+            'telefono',
+            'pagina_web',
             'generoNombre',
             //'genero_id',
             //'created_at',

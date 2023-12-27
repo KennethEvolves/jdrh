@@ -54,6 +54,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'apellido',
             'fecha_nacimiento',
             'genero.genero_nombre',
+            'telefono',
+            'pagina_web',
             'created_at',
             'updated_at',
             //'user_id',
