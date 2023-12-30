@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var backend\models\search\PeriodoSemestralSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Periodo Semestrals';
+$this->title = 'Periodo Semestral';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="periodo-semestral-index">
