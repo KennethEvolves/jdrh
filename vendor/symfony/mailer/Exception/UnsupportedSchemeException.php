@@ -48,6 +48,10 @@ class UnsupportedSchemeException extends LogicException
             'class' => Bridge\Mailchimp\Transport\MandrillTransportFactory::class,
             'package' => 'symfony/mailchimp-mailer',
         ],
+        'ohmysmtp' => [
+            'class' => Bridge\OhMySmtp\Transport\OhMySmtpTransportFactory::class,
+            'package' => 'symfony/oh-my-smtp-mailer',
+        ],
         'postmark' => [
             'class' => Bridge\Postmark\Transport\PostmarkTransportFactory::class,
             'package' => 'symfony/postmark-mailer',
@@ -59,6 +63,10 @@ class UnsupportedSchemeException extends LogicException
         'sendgrid' => [
             'class' => Bridge\Sendgrid\Transport\SendgridTransportFactory::class,
             'package' => 'symfony/sendgrid-mailer',
+        ],
+        'sendinblue' => [
+            'class' => Bridge\Sendinblue\Transport\SendinblueTransportFactory::class,
+            'package' => 'symfony/sendinblue-mailer',
         ],
         'ses' => [
             'class' => Bridge\Amazon\Transport\SesTransportFactory::class,

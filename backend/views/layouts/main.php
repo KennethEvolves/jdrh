@@ -91,7 +91,14 @@ FontAwesomeAsset::register($this);
             $menuItems[] = ['label' => 'Control Escolar', 'url' => ['/site/index'],
             'options' =>['class' =>'dropdown'],
             'template'=>'<a href="{url}" class="href_class">{label}</a>',
-            'items' =>[ ['label' => 'Productos', 'url' => ['/asignatura']],
+            'items' =>[ ['label' => 'Carrera', 'url' => ['/carrera']],
+                        ['label' => 'Fases', 'url' => ['/fases']],
+                        ['label' => 'Plan de Estudios', 'url' => ['/plan-estudios']],
+                        ['label' => 'Momentos', 'url' => ['/momentos']],
+                        ['label' => 'Unidad de Estudio', 'url' => ['/unidad-estudio']],
+                        ['label' => 'Grupo', 'url' => ['/grupo']],
+                        ['label' => 'Periodo Semestral', 'url' => ['/periodo-semestral']]
+            
             
                         ],
             ]; 
@@ -120,7 +127,7 @@ FontAwesomeAsset::register($this);
 
         // echo Html::tag('div',Html::a('Estados',['/estado/index'],
         //                                 ['class' => ['btn btn-link login text-decoration-none']]),
-        //                                 ['class' => ['d-flex']]);      
+        //                                 ['class' => ['d-flex']]);
     }   
 
     echo Nav::widget([

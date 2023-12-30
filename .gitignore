@@ -1,0 +1,6 @@
+.\vendor\
+vendor/ckeditor/
+vendor/itstructure/
+.\vendor\composer
+.\vendor\yiisoft
+.\vendor\symfony
