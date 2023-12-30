@@ -85,6 +85,10 @@ class ComposerStaticInit2deeec054bca1549fbad305f93241a84
         array (
             'Masterminds\\' => 12,
         ),
+        'I' => 
+        array (
+            'Itstructure\\CKEditor\\' => 21,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -267,6 +271,10 @@ class ComposerStaticInit2deeec054bca1549fbad305f93241a84
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
         ),
+        'Itstructure\\CKEditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/itstructure/yii2-ckeditor/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -297,9 +305,9 @@ class ComposerStaticInit2deeec054bca1549fbad305f93241a84
         ),
         'Codeception\\' => 
         array (
-            0 => __DIR__ . '/..' . '/codeception/stub/src',
-            1 => __DIR__ . '/..' . '/codeception/verify/src/Codeception',
-            2 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
+            0 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
+            1 => __DIR__ . '/..' . '/codeception/stub/src',
+            2 => __DIR__ . '/..' . '/codeception/verify/src/Codeception',
         ),
     );
 

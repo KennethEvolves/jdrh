@@ -58,4 +58,13 @@ return array (
       '@yii/symfonymailer' => $vendorDir . '/yiisoft/yii2-symfonymailer/src',
     ),
   ),
+  'itstructure/yii2-ckeditor' => 
+  array (
+    'name' => 'itstructure/yii2-ckeditor',
+    'version' => '1.1.6.0',
+    'alias' => 
+    array (
+      '@Itstructure/CKEditor' => $vendorDir . '/itstructure/yii2-ckeditor/src',
+    ),
+  ),
 );
