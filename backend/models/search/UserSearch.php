@@ -93,8 +93,8 @@ class UserSearch extends User
 
 
                 'rolNombre' => [
-                    'asc' => ['rol.rol_name' => SORT_ASC],
-                    'desc' => ['rol.rol_name' => SORT_DESC],
+                    'asc' => ['rol.rol_nombre' => SORT_ASC],
+                    'desc' => ['rol.rol_nombre' => SORT_DESC],
                     'label' => 'Rol'
                 ],
                 'estadoNombre' => [
