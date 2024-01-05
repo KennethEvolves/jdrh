@@ -58,6 +58,16 @@ class PlanEstudiosController extends Controller
         return $this->render('view', [
             'model' => $this->findModel($id_plan),
         ]);
+
+
+        // $searchModel = new AsignaturaSearch();
+        // $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$id);
+        // return $this->render('view', [
+        //     'model' => $this->findModel($id),
+        //     'searchModel'=>$searchModel,
+        //     'dataProvider'=>$dataProvider,
+        // ]);
+
     }
 
     /**

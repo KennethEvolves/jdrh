@@ -31,11 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id_plan',
             'nombre',
+            'carrera_id_carrera',
             'fecha_autorizacion',
             'vigencia',
             'estado',
             //'observaciones:ntext',
-            //'carrera_id_carrera',
+            
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, PlanEstudios $model, $key, $index, $column) {
