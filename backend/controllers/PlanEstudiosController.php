@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use backend\models\PlanEstudios;
 use backend\models\search\PlanEstudiosSearch;
+use backend\models\UnidadEstudio;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -141,4 +142,26 @@ class PlanEstudiosController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    /**
+    * Obtiene un listado de planes de estudio cuyo id_carrera coincida con el argumento.
+    * El formato del listado será HTML de tipo <option value=id_carrera>nombre</option>
+    */
+    public function actionList($id) 
+    {
+    $planes = PlanEstudios::find()->where(['carrera_id_carrera' => $id])->all();
+    $planesSize = PlanEstudios::find()->where(['carrera_id_carrera' => $id])->count();
+    if ($planesSize > 0) 
+        {   echo '<option selected disabled>Selecciona un Plan de Estudio</option>';
+        foreach ($planes as $p) {
+            echo "<option value='" . $p->id_plan . "'>" . $p->nombre . "</option>";
+        }
+     } else {
+        echo "<option> ---- </option>";
+     }
+    }
+
+    
+
+
 }

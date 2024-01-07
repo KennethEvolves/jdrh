@@ -131,4 +131,20 @@ class UnidadEstudioController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionList($id) 
+    {
+        $materias = UnidadEstudio::find()->where(['plan_estudios_id_plan' => $id])->all();
+        $materiasSize = UnidadEstudio::find()->where(['plan_estudios_id_plan' => $id])->count();
+        if ($materiasSize > 0) {
+            echo '<option selected disabled>Selecciona una Unidad de Estudio</option>';
+            foreach ($materias as $mat) {
+                echo "<option value='" . $mat->id_unidad . "'>" . $mat->nombre_asignatura . " - " . $mat->clave .  "</option>";
+            }
+         } else {
+            echo "<option> ---- </option>";
+         }
+    }
+
+
 }

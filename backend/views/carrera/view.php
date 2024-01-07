@@ -11,6 +11,7 @@ use backend\models\carrera;
 
 
 
+
 /** @var yii\web\View $this */
 /** @var backend\models\Carrera $model */
 
@@ -95,5 +96,3 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 </div>
-
-
