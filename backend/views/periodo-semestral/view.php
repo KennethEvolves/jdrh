@@ -29,7 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_ciclo',
+            
+            [
+                'attribute' => 'id_ciclo',
+                'label' => 'Ciclo ' // Cambia el nombre de la columna clave
+            ],
             'fecha_inicio',
             'fecha_fin',
             'periodo',

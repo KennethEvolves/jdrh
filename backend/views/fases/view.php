@@ -29,7 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_fase',
+            
+            [
+                'attribute' => 'id_fase',
+                'label' => 'Fase ' // Cambia el nombre de la columna clave
+            ],
             'nombre',
         ],
     ]) ?>

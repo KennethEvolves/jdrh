@@ -30,13 +30,26 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_plan',
+            
+            [
+                'attribute' => 'id_plan',
+                'label' => 'Plan ' // Cambia el nombre de la columna clave
+            ],
             'nombre',
-            'fecha_autorizacion',
+            // 'fecha_autorizacion',
+            [
+                'attribute' => 'fecha_autorizacion',
+                'label' => 'Fecha De Autorización ' // Cambia el nombre de la columna clave
+            ],
             'vigencia',
             'estado',
             'observaciones:ntext',
-            'carrera_id_carrera',
+            
+            [
+                'attribute' => 'carrera_id_carrera',
+                'label' => 'Carrera ' // Cambia el nombre de la columna clave
+            ],
+            
         ],
     ]) ?>
 

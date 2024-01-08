@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var backend\models\Asignaciones $model */
 
-$this->title = 'Create Asignaciones';
+$this->title = 'Create Asignación';
 $this->params['breadcrumbs'][] = ['label' => 'Asignaciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

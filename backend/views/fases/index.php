@@ -29,7 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_fase',
+            [
+                'attribute' => 'id_fase',
+                'label' => 'Fase ' // Cambia el nombre de la columna clave
+            ],
             'nombre',
             [
                 'class' => ActionColumn::className(),

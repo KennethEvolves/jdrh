@@ -29,7 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_grupo',
+            
+            [
+                'attribute' => 'id_grupo',
+                'label' => 'Grupo ' // Cambia el nombre de la columna clave
+            ],
             'nombre',
             'capacidad',
             'ubicacion:ntext',

@@ -29,10 +29,26 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_unidad',
+            // 'id_unidad',
+            [
+                'attribute' => 'id_unidad',
+                'label' => 'Unidad ' // Cambia el nombre de la columna clave
+            ],
+
             'clave',
-            'nombre_asignatura',
-            'creditos_asignatura',
+            // 'nombre_asignatura',
+            [
+                'attribute' => 'nombre_asignatura',
+                'label' => 'Nombre De La Asignatura ' // Cambia el nombre de la columna clave
+            ],
+
+            // 'creditos_asignatura',
+            [
+                'attribute' => 'creditos_asignatura',
+                'label' => 'Creditos De La Asignatura ' // Cambia el nombre de la columna clave
+            ],
+
+
             'des_general:ntext',
             'ras_perfil:ntext',
             'sabe_profesionales:ntext',
