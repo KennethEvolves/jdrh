@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var backend\models\Momentos $model */
 
-$this->title = 'Update Momentos: ' . $model->id_momento;
+$this->title = 'Update Momento: ' . $model->id_momento;
 $this->params['breadcrumbs'][] = ['label' => 'Momentos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_momento, 'url' => ['view', 'id_momento' => $model->id_momento]];
 $this->params['breadcrumbs'][] = 'Update';

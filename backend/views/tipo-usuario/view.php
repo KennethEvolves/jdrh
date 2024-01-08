@@ -30,8 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'tipo_usuario_nombre',
-            'tipo_usuario_valor',
+            // 'tipo_usuario_nombre'
+            [
+                'attribute' => 'tipo_usuario_nombre',
+                'label' => 'Tipo De Usuario' // Cambia el nombre de la columna clave
+            ],
+
+
+            // 'tipo_usuario_valor',
+            [
+                'attribute' => 'tipo_usuario_valor',
+                'label' => 'Valor ' // Cambia el nombre de la columna clave
+            ],
         ],
     ]) ?>
 

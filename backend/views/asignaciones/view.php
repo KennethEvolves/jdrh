@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+
 /** @var yii\web\View $this */
 /** @var backend\models\Asignaciones $model */
 
@@ -29,10 +30,30 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'grupo_id_grupo',
-            'periodo_semestral_id_ciclo',
-            'unidad_estudio_id_unidad',
-            'usuario_idusuario',
+            // 'grupo_id_grupo',
+            [
+                'attribute' => 'grupo_id_grupo',
+                'label' => 'Grupo  ' // Cambia el nombre de la columna clave
+            ],
+
+           
+            // 'periodo_semestral_id_ciclo',
+            [
+                'attribute' => 'periodo_semestral_id_ciclo',
+                'label' => 'Periodo  ' // Cambia el nombre de la columna clave
+            ],
+
+            // 'unidad_estudio_id_unidad',
+            [
+                'attribute' => 'unidad_estudio_id_unidad',
+                'label' => 'Unidad  ' // Cambia el nombre de la columna clave
+            ],
+
+            // 'usuario_idusuario',
+            [
+                'attribute' => 'usuario_idusuario',
+                'label' => 'Nombre Del Docente  ' // Cambia el nombre de la columna clave
+            ],
         ],
     ]) ?>
 

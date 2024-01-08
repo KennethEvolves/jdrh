@@ -5,6 +5,8 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use common\models\user;
+
 
 /** @var yii\web\View $this */
 /** @var backend\models\search\AsignacionesSearch $searchModel */
@@ -29,10 +31,31 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'grupo_id_grupo',
-            'periodo_semestral_id_ciclo',
-            'unidad_estudio_id_unidad',
-            'usuario_idusuario',
+            // 'grupo_id_grupo',
+            [
+                'attribute' => 'grupo_id_grupo',
+                'label' => 'Grupo  ' // Cambia el nombre de la columna clave
+            ],
+
+           
+            // 'periodo_semestral_id_ciclo',
+            [
+                'attribute' => 'periodo_semestral_id_ciclo',
+                'label' => 'Periodo  ' // Cambia el nombre de la columna clave
+            ],
+
+            // 'unidad_estudio_id_unidad',
+            [
+                'attribute' => 'unidad_estudio_id_unidad',
+                'label' => 'Unidad  ' // Cambia el nombre de la columna clave
+            ],
+
+            // 'usuario_idusuario',
+            [
+                'attribute' => 'usuario_idusuario',
+                'label' => 'Nombre Del Docente  ' // Cambia el nombre de la columna clave
+            ],
+
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Asignaciones $model, $key, $index, $column) {

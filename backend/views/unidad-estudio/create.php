@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var backend\models\UnidadEstudio $model */
 
-$this->title = 'Create Unidad Estudio';
+$this->title = 'Create Unidad De Estudio';
 $this->params['breadcrumbs'][] = ['label' => 'Unidad Estudios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

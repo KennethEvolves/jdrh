@@ -74,15 +74,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'nombre',
 
-            // ['attribute'=>'id_carrera',
-            //     'value'=>function($model)
-            //             {   $carrera = carrera::findOne($model->id_carrera);
-            //                 return $carrera->nombre;
-            //             },
-            //     'filter'=>ArrayHelper::map(carrera::find()->all(), 'id_carrera','nombre'),
-            // ],
-
-            'carrera_id_carrera',
+        
+            // 'carrera_id_carrera',
+            [
+                'attribute' => 'carrera_id_carrera',
+                'label' => 'Carrera ' // Cambia el nombre de la columna clave
+            ],
             'fecha_autorizacion',
             'vigencia',
             'estado',
