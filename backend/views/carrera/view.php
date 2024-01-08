@@ -38,11 +38,17 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_carrera',
+            [
+                'attribute' => 'id_carrera',
+                'label' => 'Carrera ' // Cambia el nombre de la columna clave
+            ],
             'nombre',
             'clave',
             'creditos',
-            'cred_serv_social',
+            [
+                'attribute' => 'cred_serv_social',
+                'label' => 'Creditos de Servicio Social ' // Cambia el nombre de la columna clave
+            ],
             'descripcion:ntext',
             'carreracol',
         ],
@@ -61,17 +67,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_plan',
+            [
+                'attribute' => 'id_plan',
+                'label' => 'Plan ',
+
+            ],
             'nombre',
 
             // ['attribute'=>'id_carrera',
-            //     'value'=>function($model)  
+            //     'value'=>function($model)
             //             {   $carrera = carrera::findOne($model->id_carrera);
             //                 return $carrera->nombre;
             //             },
             //     'filter'=>ArrayHelper::map(carrera::find()->all(), 'id_carrera','nombre'),
             // ],
-            
+
             'carrera_id_carrera',
             'fecha_autorizacion',
             'vigencia',
@@ -79,7 +89,25 @@ $this->params['breadcrumbs'][] = $this->title;
             //'observaciones:ntext',
 
 
-        ['class' => 'yii\grid\ActionColumn','controller' => 'plan-estudios','template' => '{view} {update} {delete}'],
+        ['class' => 'yii\grid\ActionColumn','controller' => 'plan-estudios','template' => '{view} {update} {delete}',
+            'urlCreator' => function ($action, $model, $key, $index){
+                // URL para la acción 'view' con el parámetro 'id_plan'
+                if ($action === 'view') {
+                    return ['plan-estudios/view', 'id_plan' => $model->id_plan];
+                }
+                // URL para la acción 'update' con el parámetro 'id_plan'
+                elseif ($action === 'update') {
+                    return ['plan-estudios/update', 'id_plan' => $model->id_plan];
+                }
+                // URL para la acción 'delete' con el parámetro 'id_plan'
+                elseif ($action === 'delete') {
+                    return ['plan-estudios/delete', 'id_plan' => $model->id_plan];
+                }
+            },
+
+
+        ],
+
 
 
             // [

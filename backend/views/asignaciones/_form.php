@@ -60,18 +60,21 @@ use backend\models\UnidadEstudio;
         ['prompt' => 'Selecciona un Plan de Estudios',
          'onchange' => '$.post("index.php?r=unidad-estudio/list&id='.'"+$(this).val(), function(data) {$("select#asignacion-id_carrera").html(data);
          });'
+
         ]);
-    ?> 
+    ?>
 
     <!-- <?= $form->field($model, 'unidad_estudio_id_unidad')->textInput() ?> -->
     
     <?= $form->field($model, 'unidad_estudio_id_unidad')->dropDownList( 
-       				ArrayHelper::map(UnidadEstudio::find()->all(),'unidad_estudio_id_unidad','nombre_asignatura'),
-                ['prompt' => 'Selecciona una unidad de estudio',]);
-                     
-                    ?>
+       				ArrayHelper::map(UnidadEstudio::find()->all(),'id_unidad','nombre_asignatura'),
+                ['prompt' => 'Selecciona una unidad de estudio',
+                'onchange' => '$.post("index.php?r=unidad-estudio/list&id='.'"+$(this).val(), function(data) {$("select#asignacion-id_carrera").html(data);'
 
 
+                ]);
+
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

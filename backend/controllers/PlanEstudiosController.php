@@ -56,8 +56,13 @@ class PlanEstudiosController extends Controller
      */
     public function actionView($id_plan)
     {
+//            return $this->render('view', [
+//                'model' => $this->findModel($id_plan),
+//            ]);
+
+        $model = PlanEstudios::findOne($id_plan);
         return $this->render('view', [
-            'model' => $this->findModel($id_plan),
+            'model' => $model,
         ]);
 
 
@@ -161,7 +166,9 @@ class PlanEstudiosController extends Controller
      }
     }
 
-    
+
+
+
 
 
 }
