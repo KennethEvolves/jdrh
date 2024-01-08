@@ -106,9 +106,13 @@ FontAwesomeAsset::register($this);
             $menuItems[] = ['label' => 'Tutorías', 'url' => ['/site/index'],
             'options' =>['class' =>'dropdown'],
             'template'=>'<a href="{url}" class="href_class">{label}</a>',
-            'items' =>[ ['label' => 'Ventas', 'url' => ['/asignatura']],
-            
-                        ],
+            'items' =>[ ['label' => 'DatosGenerales ', 'url' => ['/datos-generales']],
+                        ['label' => 'Tipos Beca ', 'url' => ['/tipos-beca']],
+                        ['label' => 'Tipo Dependientes ', 'url' => ['/tipo-dependientes']],
+                        ['label' => 'Tipo Dependencia ', 'url' => ['/tipo-dependencia']],
+                        ['label' => 'Tipo Estadocivil ', 'url' => ['/tipo-estadocivil']],
+                        ['label' => 'Datos Familiares ', 'url' => ['/datos-familiares']]
+                        ]
             ];   
         // echo Html::tag('div',Html::a('Usuarios',['/user/index'],
         //                                 ['class' => ['btn btn-link login text-decoration-none']]),
