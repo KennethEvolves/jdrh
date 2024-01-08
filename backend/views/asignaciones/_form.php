@@ -35,7 +35,6 @@ use backend\models\UnidadEstudio;
     <!-- <?= $form->field($model, 'grupo_id_grupo')->textInput() ?> -->
     <?= $form->field($model, 'grupo_id_grupo')->dropDownList( 
        				ArrayHelper::map(Grupo::find()->all(),'id_grupo','nombre')) ?>
-
     
     <!-- <?= $form->field($model, 'periodo_semestral_id_ciclo')->textInput() ?> -->
     <?= $form->field($model, 'periodo_semestral_id_ciclo')->dropDownList( 
@@ -47,26 +46,35 @@ use backend\models\UnidadEstudio;
         $p= new PlanEstudios();          
     ?>
 
+
     <?= $form->field($c, 'id_carrera')->dropDownList(
         ArrayHelper::map(Carrera::find()->all(), 'id_carrera','nombre'),
         ['prompt' => 'Selecciona una Carrera',
-         'onchange' => '$.post("index.php?r=plan-estudio/list&id='.'"+$(this).val(), function(data) {$("select#planestudios-id_plan").html(data);
+         'onchange' => '$.post("index.php?r=plan-estudios/list&id='.'"+$(this).val(), function(data) {$("select#planestudios-id_plan").html(data);
          });']);
     ?> 
+    
 
     <?= $form->field($p, 'id_plan')->dropDownList(
         ArrayHelper::map(PlanEstudios::find()->all(), 'id_plan','nombre'),
         ['prompt' => 'Selecciona un Plan de Estudios',
-         'onchange' => '$.post("index.php?r=asignatura/list&id='.'"+$(this).val(), function(data) {$("select#asignacion-id_plan").html(data);
+         'onchange' => '$.post("index.php?r=unidad-estudio/list&id='.'"+$(this).val(), function(data) {$("select#asignacion-id_carrera").html(data);
          });'
+
         ]);
-    ?> 
+    ?>
 
     <!-- <?= $form->field($model, 'unidad_estudio_id_unidad')->textInput() ?> -->
+    
     <?= $form->field($model, 'unidad_estudio_id_unidad')->dropDownList( 
-       				ArrayHelper::map(UnidadEstudio::find()->all(),'id_unidad','nombre_asignatura')) ?>
+       				ArrayHelper::map(UnidadEstudio::find()->all(),'id_unidad','nombre_asignatura'),
+                ['prompt' => 'Selecciona una unidad de estudio',
+                'onchange' => '$.post("index.php?r=unidad-estudio/list&id='.'"+$(this).val(), function(data) {$("select#asignacion-id_carrera").html(data);'
 
 
+                ]);
+
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
@@ -78,10 +86,13 @@ use backend\models\UnidadEstudio;
 
 
 
+
+
    
 
               
     
+
 
 
     

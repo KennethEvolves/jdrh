@@ -35,8 +35,8 @@ class Carrera extends \yii\db\ActiveRecord
         return [
             [['nombre', 'clave'], 'required'],
             [['creditos', 'cred_serv_social'], 'integer'],
-            [['descripcion'], 'string'],
-            [['nombre', 'clave', 'carreracol'], 'string', 'max' => 45],
+            [['descripcion','nombre'], 'string'],
+            [['clave', 'carreracol'], 'string', 'max' => 45],
         ];
     }
 

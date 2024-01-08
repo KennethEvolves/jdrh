@@ -1,24 +1,24 @@
 <?php
 
-use backend\models\PlanEstudios;
+use backend\models\Calificaciones;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var backend\models\search\PlanEstudiosSearch $searchModel */
+/** @var backend\models\search\CalificacionesSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Plan Estudios';
+$this->title = 'Calificaciones';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="plan-estudios-index">
+<div class="calificaciones-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Plan Estudios', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Calificaciones', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,18 +29,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_plan',
-            'nombre',
-            'carrera_id_carrera',
-            'fecha_autorizacion',
-            'vigencia',
-            'estado',
-            //'observaciones:ntext',
-            
+            'id_calificaciones',
+            'nombre:ntext',
+            'asistencia',
+            'total',
+            'rasgos_evaluar',
+            //'usuario_alumno',
+            //'usuario_docente',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, PlanEstudios $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id_plan' => $model->id_plan]);
+                'urlCreator' => function ($action, Calificaciones $model, $key, $index, $column) {
+                    return Url::toRoute([$action, 'id_calificaciones' => $model->id_calificaciones]);
                  }
             ],
         ],

@@ -2,16 +2,16 @@
 
 namespace backend\controllers;
 
-use backend\models\UnidadEstudio;
-use backend\models\search\UnidadEstudioSearch;
+use backend\models\Calificaciones;
+use backend\models\search\CalificacionesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UnidadEstudioController implements the CRUD actions for UnidadEstudio model.
+ * CalificacionesController implements the CRUD actions for Calificaciones model.
  */
-class UnidadEstudioController extends Controller
+class CalificacionesController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class UnidadEstudioController extends Controller
     }
 
     /**
-     * Lists all UnidadEstudio models.
+     * Lists all Calificaciones models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new UnidadEstudioSearch();
+        $searchModel = new CalificacionesSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,30 +48,30 @@ class UnidadEstudioController extends Controller
     }
 
     /**
-     * Displays a single UnidadEstudio model.
-     * @param int $id_unidad Id Unidad
+     * Displays a single Calificaciones model.
+     * @param int $id_calificaciones Id Calificaciones
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id_unidad)
+    public function actionView($id_calificaciones)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id_unidad),
+            'model' => $this->findModel($id_calificaciones),
         ]);
     }
 
     /**
-     * Creates a new UnidadEstudio model.
+     * Creates a new Calificaciones model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new UnidadEstudio();
+        $model = new Calificaciones();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id_unidad' => $model->id_unidad]);
+                return $this->redirect(['view', 'id_calificaciones' => $model->id_calificaciones]);
             }
         } else {
             $model->loadDefaultValues();
@@ -83,18 +83,18 @@ class UnidadEstudioController extends Controller
     }
 
     /**
-     * Updates an existing UnidadEstudio model.
+     * Updates an existing Calificaciones model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id_unidad Id Unidad
+     * @param int $id_calificaciones Id Calificaciones
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id_unidad)
+    public function actionUpdate($id_calificaciones)
     {
-        $model = $this->findModel($id_unidad);
+        $model = $this->findModel($id_calificaciones);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id_unidad' => $model->id_unidad]);
+            return $this->redirect(['view', 'id_calificaciones' => $model->id_calificaciones]);
         }
 
         return $this->render('update', [
@@ -103,48 +103,32 @@ class UnidadEstudioController extends Controller
     }
 
     /**
-     * Deletes an existing UnidadEstudio model.
+     * Deletes an existing Calificaciones model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $id_unidad Id Unidad
+     * @param int $id_calificaciones Id Calificaciones
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id_unidad)
+    public function actionDelete($id_calificaciones)
     {
-        $this->findModel($id_unidad)->delete();
+        $this->findModel($id_calificaciones)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the UnidadEstudio model based on its primary key value.
+     * Finds the Calificaciones model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $id_unidad Id Unidad
-     * @return UnidadEstudio the loaded model
+     * @param int $id_calificaciones Id Calificaciones
+     * @return Calificaciones the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id_unidad)
+    protected function findModel($id_calificaciones)
     {
-        if (($model = UnidadEstudio::findOne(['id_unidad' => $id_unidad])) !== null) {
+        if (($model = Calificaciones::findOne(['id_calificaciones' => $id_calificaciones])) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-
-    public function actionList($id) 
-    {
-        $materias = UnidadEstudio::find()->where(['plan_estudios_id_plan' => $id])->all();
-        $materiasSize = UnidadEstudio::find()->where(['plan_estudios_id_plan' => $id])->count();
-        if ($materiasSize > 0) {
-            echo '<option selected disabled>Selecciona una Unidad de Estudio</option>';
-            foreach ($materias as $mat) {
-                echo "<option value='" . $mat->id_unidad . "'>" . $mat->nombre_asignatura . " - " . $mat->clave .  "</option>";
-            }
-         } else {
-            echo "<option> ---- </option>";
-         }
-    }
-
-
 }

@@ -1,15 +1,15 @@
-    <?php
+<?php
 
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var backend\models\Carrera $model */
+/** @var backend\models\Calificaciones $model */
 
-$this->title = 'Create Carrera';
-$this->params['breadcrumbs'][] = ['label' => 'Carreras', 'url' => ['index']];
+$this->title = 'Create Calificaciones';
+$this->params['breadcrumbs'][] = ['label' => 'Calificaciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="carrera-create">
+<div class="calificaciones-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

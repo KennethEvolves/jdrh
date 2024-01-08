@@ -38,7 +38,7 @@ class PlanEstudios extends \yii\db\ActiveRecord
             [['fecha_autorizacion', 'vigencia'], 'safe'],
             [['observaciones'], 'string'],
             [['carrera_id_carrera'], 'integer'],
-            [['nombre'], 'string', 'max' => 15],
+            [['nombre'], 'string'],
             [['estado'], 'string', 'max' => 45],
             [['carrera_id_carrera'], 'exist', 'skipOnError' => true, 'targetClass' => Carrera::class, 'targetAttribute' => ['carrera_id_carrera' => 'id_carrera']],
         ];

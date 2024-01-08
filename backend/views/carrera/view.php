@@ -7,6 +7,8 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\helpers\Url;
 use backend\models\PlanEstudios;
+use backend\models\carrera;
+
 
 
 
@@ -36,22 +38,25 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_carrera',
+            [
+                'attribute' => 'id_carrera',
+                'label' => 'Carrera ' // Cambia el nombre de la columna clave
+            ],
             'nombre',
             'clave',
             'creditos',
-            'cred_serv_social',
+            [
+                'attribute' => 'cred_serv_social',
+                'label' => 'Creditos de Servicio Social ' // Cambia el nombre de la columna clave
+            ],
             'descripcion:ntext',
             'carreracol',
         ],
     ]) ?>
 
-    <div class="plan-estudios-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+    
     <p>
-        <?= Html::a('Create Plan Estudios', ['create'], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('Create Plan Estudios', ['plan-estudios/create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -62,25 +67,60 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_plan',
+            [
+                'attribute' => 'id_plan',
+                'label' => 'Plan ',
+
+            ],
             'nombre',
+
+            // ['attribute'=>'id_carrera',
+            //     'value'=>function($model)
+            //             {   $carrera = carrera::findOne($model->id_carrera);
+            //                 return $carrera->nombre;
+            //             },
+            //     'filter'=>ArrayHelper::map(carrera::find()->all(), 'id_carrera','nombre'),
+            // ],
+
+            'carrera_id_carrera',
             'fecha_autorizacion',
             'vigencia',
             'estado',
             //'observaciones:ntext',
-            //'carrera_id_carrera',
-            [
-                'class' => ActionColumn::class,
-                'urlCreator' => function ($action, PlanEstudios $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id_plan' => $model->id_plan]);
+
+
+        ['class' => 'yii\grid\ActionColumn','controller' => 'plan-estudios','template' => '{view} {update} {delete}',
+            'urlCreator' => function ($action, $model, $key, $index){
+                // URL para la acción 'view' con el parámetro 'id_plan'
+                if ($action === 'view') {
+                    return ['plan-estudios/view', 'id_plan' => $model->id_plan];
                 }
-            ],
+                // URL para la acción 'update' con el parámetro 'id_plan'
+                elseif ($action === 'update') {
+                    return ['plan-estudios/update', 'id_plan' => $model->id_plan];
+                }
+                // URL para la acción 'delete' con el parámetro 'id_plan'
+                elseif ($action === 'delete') {
+                    return ['plan-estudios/delete', 'id_plan' => $model->id_plan];
+                }
+            },
+
+
+        ],
+
+
+
+            // [
+            //     'class' => ActionColumn::className(),
+            //     'urlCreator' => function ($action, PlanEstudios $model, $key, $index, $column) {
+            //         return Url::toRoute([$action, 'id_plan' => $model->id_plan]);
+            //      }
+            // ],
+
+
         ],
     ]); ?>
-
     
 
 
 </div>
-
-

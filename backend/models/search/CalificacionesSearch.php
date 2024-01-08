@@ -4,12 +4,12 @@ namespace backend\models\search;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Carrera;
+use backend\models\Calificaciones;
 
 /**
- * CarreraSearch represents the model behind the search form of `backend\models\Carrera`.
+ * CalificacionesSearch represents the model behind the search form of `backend\models\Calificaciones`.
  */
-class CarreraSearch extends Carrera
+class CalificacionesSearch extends Calificaciones
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,9 @@ class CarreraSearch extends Carrera
     public function rules()
     {
         return [
-            [['id_carrera', 'creditos', 'cred_serv_social'], 'integer'],
-            [['nombre', 'clave', 'descripcion', 'carreracol'], 'safe'],
+            [['id_calificaciones', 'asistencia', 'usuario_alumno', 'usuario_docente'], 'integer'],
+            [['nombre', 'rasgos_evaluar'], 'safe'],
+            [['total'], 'number'],
         ];
     }
 
@@ -40,9 +41,7 @@ class CarreraSearch extends Carrera
      */
     public function search($params)
     {
-        $query = Carrera::find();
-
-        
+        $query = Calificaciones::find();
 
         // add conditions that should always apply here
 
@@ -60,15 +59,15 @@ class CarreraSearch extends Carrera
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id_carrera' => $this->id_carrera,
-            'creditos' => $this->creditos,
-            'cred_serv_social' => $this->cred_serv_social,
+            'id_calificaciones' => $this->id_calificaciones,
+            'asistencia' => $this->asistencia,
+            'total' => $this->total,
+            'usuario_alumno' => $this->usuario_alumno,
+            'usuario_docente' => $this->usuario_docente,
         ]);
 
         $query->andFilterWhere(['like', 'nombre', $this->nombre])
-            ->andFilterWhere(['like', 'clave', $this->clave])
-            ->andFilterWhere(['like', 'descripcion', $this->descripcion])
-            ->andFilterWhere(['like', 'carreracol', $this->carreracol]);
+            ->andFilterWhere(['like', 'rasgos_evaluar', $this->rasgos_evaluar]);
 
         return $dataProvider;
     }

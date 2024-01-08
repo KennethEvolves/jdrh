@@ -1,13 +1,14 @@
 <?php
 
 namespace backend\controllers;
-
+use Yii;
 use backend\models\Carrera;
 use backend\models\search\CarreraSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use backend\models\search\PlanEstudiosSearch;
+use backend\models\PlanEstudios;
 /**
  * CarreraController implements the CRUD actions for Carrera model.
  */
@@ -55,9 +56,23 @@ class CarreraController extends Controller
      */
     public function actionView($id_carrera)
     {
+        //  return $this->render('view', [
+        //      'model' => $this->findModel($id_carrera),
+        //  ]);
+
+        $searchModel = new PlanEstudiosSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$id_carrera);
+
         return $this->render('view', [
             'model' => $this->findModel($id_carrera),
+            'searchModel'=>$searchModel,
+            'dataProvider'=>$dataProvider,
+
+            
         ]);
+
+
+        
     }
 
     /**
@@ -131,4 +146,8 @@ class CarreraController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+
+
+
 }

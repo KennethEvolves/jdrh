@@ -16,7 +16,7 @@ use Itstructure\CKEditor\CKEditor;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'nombre')->textInput(['maxlength' => false]) ?>
 
     <?= $form->field($model, 'clave')->textInput(['maxlength' => true]) ?>
 

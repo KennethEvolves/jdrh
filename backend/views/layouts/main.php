@@ -98,7 +98,8 @@ FontAwesomeAsset::register($this);
                         ['label' => 'Unidad de Estudio', 'url' => ['/unidad-estudio']],
                         ['label' => 'Grupo', 'url' => ['/grupo']],
                         ['label' => 'Periodo Semestral', 'url' => ['/periodo-semestral']],
-                        ['label' => 'Asignaciones', 'url' => ['/asignaciones']]
+                        ['label' => 'Asignaciones', 'url' => ['/asignaciones']],
+                        ['label' => 'Calificaciones', 'url' => ['/calificaciones']]
             
             
                         ],

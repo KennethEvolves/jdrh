@@ -1,7 +1,7 @@
 <?php
 
 namespace backend\models\search;
-
+use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\models\PlanEstudios;
@@ -38,9 +38,16 @@ class PlanEstudiosSearch extends PlanEstudios
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params, $id=null)
     {
-        $query = PlanEstudios::find();
+        //$query = PlanEstudio::find();
+        if ($id)
+             $query = PlanEstudios::find()->where(['carrera_id_carrera' => $id]);
+        else
+            $query = PlanEstudios::find();
+        // add conditions that should always apply here
+        
+        //$query = PlanEstudios::find();
 
         // add conditions that should always apply here
 

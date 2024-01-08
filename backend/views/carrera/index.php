@@ -29,11 +29,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_carrera',
+            [
+                'attribute' => 'id_carrera',
+                'label' => 'Carrera ' // Cambia el nombre de la columna clave
+            ],
             'nombre',
-            'clave',
+            [
+                'attribute' => 'clave',
+                'label' => 'Clave de la Carrera' // Cambia el nombre de la columna clave
+            ],
             'creditos',
-            'cred_serv_social',
+            [
+                'attribute' => 'cred_serv_social',
+                'label' => 'Créditos Servicio Social', // Cambia el nombre de la columna cred_serv_social
+            ],
             //'descripcion:ntext',
             //'carreracol',
             [
