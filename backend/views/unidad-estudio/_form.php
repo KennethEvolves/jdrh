@@ -41,7 +41,7 @@ use backend\models\PlanEstudios;
     <!-- <?= $form->field($model, 'plan_estudios_id_plan')->textInput() ?>
 
     <?= $form->field($model, 'fases_id_fase')->textInput() ?> -->
-    
+
 
 
 
@@ -52,7 +52,7 @@ use backend\models\PlanEstudios;
                     ArrayHelper::map(Fases::find()->all(),'id_fase','nombre'));?>                
     
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('S   ave', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
