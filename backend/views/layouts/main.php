@@ -93,7 +93,7 @@ FontAwesomeAsset::register($this);
             'template'=>'<a href="{url}" class="href_class">{label}</a>',
             'items' =>[ ['label' => 'Carrera', 'url' => ['/carrera']],
                         ['label' => 'Fases', 'url' => ['/fases']],
-                        ['label' => 'Plan de Estudios', 'url' => ['/plan-estudios']],
+                        // ['label' => 'Plan de Estudios', 'url' => ['/plan-estudios']],
                         ['label' => 'Momentos', 'url' => ['/momentos']],
                         ['label' => 'Unidad de Estudio', 'url' => ['/unidad-estudio']],
                         ['label' => 'Grupo', 'url' => ['/grupo']],

@@ -5,7 +5,9 @@ namespace backend\models\search;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\models\UnidadEstudio;
-
+use backend\models\search\UnidadEstudioSearch;
+use backend\models\PlanEstudios;
+use backend\models\search\PlanEstudiosSearch;
 /**
  * UnidadEstudioSearch represents the model behind the search form of `backend\models\UnidadEstudio`.
  */
@@ -38,9 +40,13 @@ class UnidadEstudioSearch extends UnidadEstudio
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params, $id=null)
     {
-        $query = UnidadEstudio::find();
+        // $query = UnidadEstudio::find();
+        if ($id)
+            $query = UnidadEstudio::find()->where(['plan_estudios_id_plan' => $id]);
+        else
+            $query = UnidadEstudio::find();
 
         // add conditions that should always apply here
 

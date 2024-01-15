@@ -1,10 +1,11 @@
 <?php
 
 namespace backend\controllers;
-
+use yii;
 use backend\models\PlanEstudios;
 use backend\models\search\PlanEstudiosSearch;
 use backend\models\UnidadEstudio;
+use backend\models\search\UnidadEstudioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -60,11 +61,18 @@ class PlanEstudiosController extends Controller
 //                'model' => $this->findModel($id_plan),
 //            ]);
 
-        $model = PlanEstudios::findOne($id_plan);
-        return $this->render('view', [
-            'model' => $model,
-        ]);
+        // $model = PlanEstudios::findOne($id_plan);
+        // return $this->render('view', [
+        //     'model' => $model,
+        // ]);
+        $searchModel = new UnidadEstudioSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$id_plan);
 
+        return $this->render('view', [
+            'model' => $this->findModel($id_plan),
+            'searchModel'=>$searchModel,
+            'dataProvider'=>$dataProvider,
+        ]);
 
         // $searchModel = new AsignaturaSearch();
         // $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$id);

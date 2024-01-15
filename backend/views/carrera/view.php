@@ -8,7 +8,7 @@ use yii\grid\GridView;
 use yii\helpers\Url;
 use backend\models\PlanEstudios;
 use backend\models\carrera;
-
+use yii\helpers\ArrayHelper;
 
 
 
@@ -72,14 +72,27 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Plan ',
 
             ],
+            
             'nombre',
 
         
             // 'carrera_id_carrera',
-            [
-                'attribute' => 'carrera_id_carrera',
-                'label' => 'Carrera ' // Cambia el nombre de la columna clave
+            // [
+            //     'attribute' => 'carrera_id_carrera',
+            //     'label' => 'Carrera ' // Cambia el nombre de la columna clave
+            // ],
+           
+           
+            ['attribute'=>'carrera_id_carrera',
+                            'value'=>function($model)
+                        {   $carrera = Carrera::findOne($model->carrera_id_carrera);
+                            return $carrera->nombre;
+                        },
+                'filter'=>ArrayHelper::map(Carrera::find()->all(), 'id_carrera','nombre'),
+                'label' => 'Nombre De La Carrera ' // Cambia el nombre de la columna clave
             ],
+
+            
             'fecha_autorizacion',
             'vigencia',
             'estado',
