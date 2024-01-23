@@ -72,7 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'headerContainer' => ['class' => 'kv-table-header', 'style' => 'top: 50px'],
             'pjax'=>true,
             'panel'=>[
-                'heading'=>'<h3 class="panel-title"></i>  USER</h3>',
+                'heading'=>'<h3 class="panel-title"></i>  CARRERAS</h3>',
                 'before' =>  '<div style="padding-top: 7px;"><em> Si desea generar un reporte, puede utilizar las opciones siguientes </em></div>',
                 'after' => false
             ],
@@ -84,11 +84,11 @@ $this->params['breadcrumbs'][] = $this->title;
                  ExportMenu::widget([
                     'dataProvider' => $dataProvider,
                     'columns' => $columns,
-                    'filename'=>'Reporte de usuarios',
+                    'filename'=>'Reporte de carrera',
                      
                     'contentBefore' => [
                         
-                        ['value' => 'REPORTE DE USUARIOS'],
+                        ['value' => 'REPORTE DE CARRERA'],
                         [
                             'value' => '&nbsp;', // Espacio en blanco HTML
                             'format' => 'raw', // Indica que el valor se debe interpretar como HTML

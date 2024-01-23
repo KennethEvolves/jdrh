@@ -10,6 +10,8 @@ use yii\filters\VerbFilter;
 
 use common\models\PermisosHelpers;
 
+use yii\data\ActiveDataProvider;
+
 use yii;
 
 /**
@@ -86,9 +88,24 @@ class PerfilController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
+        // return $this->render('view', [
+        //     'model' => $this->findModel($id),
+        // ]);
+        $model = $this->findModel($id);
+
+        // Utiliza un nuevo dataProvider para la vista detallada
+        $dataProvider = new ActiveDataProvider([
+            'query' => Perfil::find()->where(['id' => $id]),
+            'pagination' => false, // para que se muestren todos los registros sin paginación
         ]);
+        $searchModel = new PerfilSearch();
+        return $this->render('view', [
+            'model' => $model,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            
+        ]);
+    
     }
 
     /**

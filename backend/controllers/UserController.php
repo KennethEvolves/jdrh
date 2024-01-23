@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 
 use common\models\PermisosHelpers;
 
+use yii\data\ActiveDataProvider;
 /**
  * UserController implements the CRUD actions for User model.
  */
@@ -84,8 +85,22 @@ class UserController extends Controller
      */
     public function actionView($id)
     {
+        // return $this->render('view', [
+        //     'model' => $this->findModel($id),
+        // ]);
+        $model = $this->findModel($id);
+
+        // Utiliza un nuevo dataProvider para la vista detallada
+        $dataProvider = new ActiveDataProvider([
+            'query' => User::find()->where(['id' => $id]),
+            'pagination' => false, // para que se muestren todos los registros sin paginación
+        ]);
+        $searchModel = new UserSearch();
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            
         ]);
     }
 

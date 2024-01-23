@@ -20,8 +20,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
  
-    <h1><?= Html::encode($this->title) ?></h1>
- 
+    <h1><?= Html::encode($this->title = 'FILTRADO DE USUARIOS') ?></h1>
+    
      <?php  // echo Collapse::widget(['items' => [
                                             // equivalente a lo de arriba
                                            //  [
@@ -89,7 +89,7 @@ $dynagrid = DynaGrid::begin([
         'headerContainer' => ['class' => 'kv-table-header', 'style' => 'top: 50px'],
         'pjax'=>true,
         'panel'=>[
-            'heading'=>'<h3 class="panel-title"></i>  USER</h3>',
+            'heading'=>'<h3 class="panel-title"></i>  USUARIOS</h3>',
             'before' =>  '<div style="padding-top: 7px;"><em> Si desea generar un reporte, puede utilizar las opciones siguientes </em></div>',
             'after' => false
         ],
