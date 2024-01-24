@@ -25,28 +25,23 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    
 
-    <p>
+    <table width="100%">
+    
+        <tr>
+            <td  align="left"><img src="archivos/sies2.png" width="300" ></td>
+            <td  align="right"><img src="archivos/normal.png" width="80" ></td>
+            
+            
+        </tr>
+</table>
+    
+     <h4 style="text-align: center; font-weight: bold;">Escuela Normal <br>Juan De Dios Rodriguez Heredia</h4>
+        <h4 style="text-align: center;">Reporte de Usuario</h4>
 
-    <?php if (!Yii::$app->user->isGuest && $muestra_esta_nav) {
-      echo Html::a('Update', ['update', 'id' => $model->id], 
-                             ['class' => 'btn btn-primary']);}?>
- 
-    <?php if (!Yii::$app->user->isGuest && $muestra_esta_nav) {
-        echo Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-            'confirm' => 'Are you sure you want to delete this item?',
-            'method' => 'post',
-            ],
-            ]);}?>
-
-    </p>
-    <?= Html::a('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;GENERAR PDF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;', 
-    ['user/viewpdf','id' => $model->id,],
-    ['class' => 'btn btn-success', 'target'=>'_blank']) ?>
-
+        <h1><?= Html::encode($this->title) ?></h1>
+    
     <?=DetailView::widget([
         'model' => $model,
         'attributes' => [

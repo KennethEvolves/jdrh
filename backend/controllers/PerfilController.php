@@ -9,11 +9,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 use common\models\PermisosHelpers;
-
-use yii\data\ActiveDataProvider;
-
+use kartik\mpdf\pdf;
 use yii;
-
+use yii\data\ActiveDataProvider;
 /**
  * PerfilController implements the CRUD actions for Perfil model.
  */
@@ -88,24 +86,46 @@ class PerfilController extends Controller
      */
     public function actionView($id)
     {
-        // return $this->render('view', [
-        //     'model' => $this->findModel($id),
-        // ]);
-        $model = $this->findModel($id);
 
-        // Utiliza un nuevo dataProvider para la vista detallada
-        $dataProvider = new ActiveDataProvider([
-            'query' => Perfil::find()->where(['id' => $id]),
-            'pagination' => false, // para que se muestren todos los registros sin paginación
-        ]);
-        $searchModel = new PerfilSearch();
         return $this->render('view', [
-            'model' => $model,
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'model' => $this->findModel($id),
             
         ]);
-    
+        
+    }
+
+    public function actionViewpdf($id)
+    {
+        $model = Perfil::findOne($id);
+        // $materia= Asignatura::findOne($model->id_asignatura)->nombre. ' - ' . Grupos::findOne(['idgrupo'=>$model->grupo])->nombre ;
+        
+       $pdf = new Pdf([
+        'mode' => Pdf::MODE_UTF8,
+        'format' => Pdf::FORMAT_LETTER,
+        'defaultFontSize'=>12,
+        'defaultFont'=>'Arial',
+        // 'orientation' => Pdf::ORIENT_LANDSCAPE,
+        'orientation' => Pdf::ORIENT_PORTRAIT, // Cambiado a orientación vertical
+        'marginBottom'=>30,
+        'marginFooter'=>0,
+        'destination' => Pdf::DEST_BROWSER,
+        // 'cssFile'=>'@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+        'cssInline' => '',
+        'content'=>$this->renderPartial('viewpdf', ['model' => $this->findModel($id),false]),
+        // 'filename'=>'Instrumentacion de '.$materia.'.pdf',
+        'filename'=>'.pdf',
+        'options' => [
+            'title' => '',
+            'subject' => '',
+                      
+            ],
+        'methods' => [  'SetFooter' => ['|Page {PAGENO}|'],
+                        // 'SetHTMLFooter' => ('<div ALIGN="center"><img src="" width="200" height="50">
+                        //  Pag.{PAGENO}</div>'),
+                        'SetTitle'=>("PERFIL"),
+                    ]
+    ]);
+    return $pdf->render();
     }
 
     /**

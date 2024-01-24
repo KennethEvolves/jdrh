@@ -3,7 +3,7 @@
         'name' => 'yiisoft/yii2-app-advanced',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f7b720f1268d32460c31afd6cbfa232e101b587f',
+        'reference' => '815ba5199c5aef11c0fbb163fb24bf12b1612baa',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -359,7 +359,7 @@
             'aliases' => array(
                 0 => '1.0.x-dev',
             ),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'kartik-v/yii2-popover-x' => array(
             'pretty_version' => 'v1.3.5',
@@ -440,7 +440,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../mpdf/mpdf',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'mpdf/psr-http-message-shim' => array(
             'pretty_version' => 'v2.0.1',
@@ -449,7 +449,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../mpdf/psr-http-message-shim',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'mpdf/psr-log-aware-trait' => array(
             'pretty_version' => 'v3.0.0',
@@ -458,7 +458,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../mpdf/psr-log-aware-trait',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.11.1',
@@ -467,7 +467,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../myclabs/deep-copy',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'nikic/php-parser' => array(
             'pretty_version' => 'v5.0.0',
@@ -632,7 +632,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../psr/http-message',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'psr/http-message-implementation' => array(
             'dev_requirement' => true,
@@ -842,7 +842,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../setasign/fpdi',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'symfony/browser-kit' => array(
             'pretty_version' => 'v6.4.0',
@@ -1051,7 +1051,7 @@
         'yiisoft/yii2-app-advanced' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f7b720f1268d32460c31afd6cbfa232e101b587f',
+            'reference' => '815ba5199c5aef11c0fbb163fb24bf12b1612baa',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

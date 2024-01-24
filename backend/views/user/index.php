@@ -105,7 +105,7 @@ $dynagrid = DynaGrid::begin([
                  
                 'contentBefore' => [
                     
-                    ['value' => 'REPORTE DE USUARIOS'],
+                    ['value' => 'REPORTE DE USUARIOS','format' => 'raw' ],
                     [
                         'value' => '&nbsp;', // Espacio en blanco HTML
                         'format' => 'raw', // Indica que el valor se debe interpretar como HTML
