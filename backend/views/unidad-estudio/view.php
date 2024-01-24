@@ -39,25 +39,51 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'nombre_asignatura',
             [
                 'attribute' => 'nombre_asignatura',
-                'label' => 'Nombre De La Asignatura ' // Cambia el nombre de la columna clave
+                'label' => 'Nombre De La Asignatura ' 
             ],
 
             // 'creditos_asignatura',
             [
                 'attribute' => 'creditos_asignatura',
-                'label' => 'Creditos De La Asignatura ' // Cambia el nombre de la columna clave
+                'label' => 'Creditos De La Asignatura ' 
             ],
-
-
-            'des_general:ntext',
-            'ras_perfil:ntext',
-            'sabe_profesionales:ntext',
-            'elem_universo:ntext',
-            'num_momentos',
+            // 'des_general:ntext',
+            [
+                'attribute' => 'des_general',
+                'label' => 'Descripcion General ' 
+            ],
+            // 'ras_perfil:ntext',
+            [
+                'attribute' => 'ras_perfil',
+                'label' => 'Rasgos del perfil ' 
+            ],
+            // 'sabe_profesionales:ntext',
+            [
+                'attribute' => 'sabe_profesionales',
+                'label' => 'Saberes Profesionales ' 
+            ],
+            // 'elem_universo:ntext',
+            [
+                'attribute' => 'elem_universo',
+                'label' => 'Elementos del universo ' 
+            ],
+            // 'num_momentos',
+            [
+                'attribute' => 'num_momentos',
+                'label' => 'Numero de momentos' 
+            ],
             'satca',
             'semestre',
-            'plan_estudios_id_plan',
-            'fases_id_fase',
+            // 'plan_estudios_id_plan',
+            [
+                'attribute' => 'plan_estudios_id_plan',
+                'label' => 'Numero de momentos' 
+            ],
+            // 'fases_id_fase',
+            [
+                'attribute' => 'fases_id_fase',
+                'label' => 'Fases' 
+            ],
         ],
     ]) ?>
 

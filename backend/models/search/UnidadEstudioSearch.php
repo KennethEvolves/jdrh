@@ -5,7 +5,6 @@ namespace backend\models\search;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\models\UnidadEstudio;
-use backend\models\search\UnidadEstudioSearch;
 use backend\models\PlanEstudios;
 use backend\models\search\PlanEstudiosSearch;
 /**

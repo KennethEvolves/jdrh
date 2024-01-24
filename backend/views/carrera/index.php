@@ -84,7 +84,7 @@ $this->params['breadcrumbs'][] = $this->title;
                  ExportMenu::widget([
                     'dataProvider' => $dataProvider,
                     'columns' => $columns,
-                    'filename'=>'Reporte de carrera',
+                    'filename'=>'Reporte de Carrera',
                      
                     'contentBefore' => [
                         
