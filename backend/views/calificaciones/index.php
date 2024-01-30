@@ -80,8 +80,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'value' => 'grupo.nombre', // Cambia 'nombre' al nombre del atributo real en tu modelo Grupo
         ],
 
-        //arreglar despues de mapear
-        'id_periodo_semestral',
+        // 'id_periodo_semestral',
+        [
+            'attribute' => 'id_periodo_semestral',
+            'label' => 'Periodo Semestral ',
+            'headerOptions' => ['style' => 'white-space: normal;'], // Esto permite el salto de línea para el titulo
+            'value' => 'periodoSemestral.periodo', // muestra el periodo semestral en el grid
+            
+            
+        ],
         //nombre de Alumnos
         [
             'attribute' => 'id_alumno',
@@ -170,9 +177,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 ),
             ],
 
-            'id_periodo_semestral',
-            //colocar lo que esta en la linea siguiente despues de mapear este apartado para que tenga salto de titulo
-            //'headerOptions' => ['style' => 'white-space: normal;'], // Esto permite el salto de línea para el titulo
+            // 'id_periodo_semestral',
+            [
+                'attribute' => 'id_periodo_semestral',
+                'label' => 'Periodo Semestral ',
+                'headerOptions' => ['style' => 'white-space: normal;'], // Esto permite el salto de línea para el titulo
+                'value' => 'periodoSemestral.periodo', // muestra el periodo semestral en el grid
+                
+                
+            ],
+
             
             
             //'id_alumno',

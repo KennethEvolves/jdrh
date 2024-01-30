@@ -8,6 +8,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use kartik\mpdf\pdf;
+
 /**
  * UnidadEstudioController implements the CRUD actions for UnidadEstudio model.
  */
@@ -59,6 +61,44 @@ class UnidadEstudioController extends Controller
             'model' => $this->findModel($id_unidad),
         ]);
     }
+
+
+
+
+    public function actionViewpdf($id)
+    { 
+        $model = UnidadEstudio::findOne($id);
+        // $materia= Asignatura::findOne($model->id_asignatura)->nombre. ' - ' . Grupos::findOne(['idgrupo'=>$model->grupo])->nombre ;
+        
+       $pdf = new Pdf([
+        'mode' => Pdf::MODE_UTF8,
+        'format' => Pdf::FORMAT_LETTER,
+        'defaultFontSize'=>12,
+        'defaultFont'=>'Arial',
+        // 'orientation' => Pdf::ORIENT_LANDSCAPE,
+        'orientation' => Pdf::ORIENT_PORTRAIT, // Cambiado a orientación vertical
+        'marginBottom'=>30,
+        'marginFooter'=>0,
+        'destination' => Pdf::DEST_BROWSER,
+        // 'cssFile'=>'@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+        'cssInline' => '',
+        'content'=>$this->renderPartial('viewpdf', ['model' => $this->findModel($id),false]),
+        // 'filename'=>'Instrumentacion de '.$materia.'.pdf',
+        'filename'=>'.pdf', //SE PUEDE MODIFICAR PARA EL TITULO DE LA PAGINA
+        'options' => [
+            'title' => '',
+            'subject' => '',
+                      
+            ],
+        'methods' => [  'SetFooter' => ['|Page {PAGENO}|'],
+                        // 'SetHTMLFooter' => ('<div ALIGN="center"><img src="" width="200" height="50">
+                        //  Pag.{PAGENO}</div>'),
+                        'SetTitle'=>("UNIDAD DE ESTUDIO"), //SE MUESTRA ANTES DEL TITULO DE LA PAGINA
+                    ]
+    ]);
+    return $pdf->render();
+    }
+
 
     /**
      * Creates a new UnidadEstudio model.

@@ -15,7 +15,7 @@ use yii\helpers\ArrayHelper;
 /** @var yii\web\View $this */
 /** @var backend\models\Carrera $model */
 
-$this->title = $model->id_carrera;
+$this->title = $model->nombre;
 $this->params['breadcrumbs'][] = ['label' => 'Carreras', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -34,6 +34,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+
+    <!-- boton para generar la exportacion en pdf -->
+</p>
+    <?= Html::a('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;GENERAR PDF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;', 
+    ['carrera/viewpdf','id' => $model->id_carrera,],
+    ['class' => 'btn btn-success', 'target'=>'_blank']) ?>
+
 
     <?= DetailView::widget([
         'model' => $model,

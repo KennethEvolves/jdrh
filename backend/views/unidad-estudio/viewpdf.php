@@ -3,8 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
-
-
 /** @var yii\web\View $this */
 /** @var backend\models\UnidadEstudio $model */
 
@@ -14,28 +12,30 @@ $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="unidad-estudio-view">
+    
+
+<!-- coloca las imagenes en el encabezado y el titulo -->
+<table width="100%">
+    
+    <tr>
+        <!-- <td  align="left"><img src="archivos/sies2.png" width="300" ></td> -->
+        <td  align="right"><img src="archivos/normal.png" width="80" ></td>
+        
+        
+    </tr>
+</table>
+
+ <h4 style="text-align: center; font-weight: bold;">Escuela Normal <br>Juan De Dios Rodriguez Heredia</h4>
+    <h4 style="text-align: center;">Reporte de Unidad de Estudio</h4>
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Update', ['update', 'id_unidad' => $model->id_unidad], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id_unidad' => $model->id_unidad], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-<!-- boton para generar la exportacion en pdf -->
-</p>
-    <?= Html::a('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;GENERAR PDF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;', 
-    ['unidad-estudio/viewpdf','id' => $model->id_unidad,],
-    ['class' => 'btn btn-success', 'target'=>'_blank']) ?>
 
 
 
+
+
+    
 
     <?= DetailView::widget([
         'model' => $model,
