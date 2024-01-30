@@ -32,6 +32,9 @@ class ExportWriterPdf extends Mpdf
     /**
      * @inheritdoc
      */
+
+
+    //este apartado queda en conflicto con el phpoffice, pero se comento el otro codigo para que no haya error
     protected function createExternalWriterInstance($config = [])
     {
         if (isset($config['tempDir'])) {

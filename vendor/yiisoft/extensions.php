@@ -184,4 +184,13 @@ return array (
     ),
     'bootstrap' => 'yii\\bootstrap5\\i18n\\TranslationBootstrap',
   ),
+  'kartik-v/yii2-editors' => 
+  array (
+    'name' => 'kartik-v/yii2-editors',
+    'version' => 'dev-master',
+    'alias' => 
+    array (
+      '@kartik/editors' => $vendorDir . '/kartik-v/yii2-editors/src',
+    ),
+  ),
 );
