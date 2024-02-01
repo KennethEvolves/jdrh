@@ -44,14 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'clave',
             'nombre_asignatura',
             'creditos_asignatura',
-            // 'des_general:ntext',
-            [
-                'attribute' => 'des_general',
-                'format' => 'raw',
-                'value' => function ($model) {
-                    return Html::decode($model->des_general);
-                },
-            ],
+            'des_general:ntext',
             //'ras_perfil:ntext',
             //'sabe_profesionales:ntext',
             //'elem_universo:ntext',
@@ -84,10 +77,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'clave',
         'nombre_asignatura',
         'creditos_asignatura',
+        
         // 'des_general:ntext',
         [
             'attribute' => 'des_general',
             'label' => 'Descripción General',
+            'format' => 'raw',  // Utiliza 'raw' para permitir HTML
         ],
         [
             'class' => ActionColumn::class,

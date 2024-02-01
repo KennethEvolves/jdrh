@@ -61,7 +61,8 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'des_general:ntext',
             [
                 'attribute' => 'des_general',
-                'label' => 'Descripcion General ' 
+                'label' => 'Descripción General',
+                'format' => 'raw',  // Utiliza 'raw' para permitir HTML
             ],
             // 'ras_perfil:ntext',
             [
