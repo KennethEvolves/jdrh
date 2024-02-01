@@ -85,7 +85,7 @@ use kartik\editors\Summernote;
                     ArrayHelper::map(Fases::find()->all(),'id_fase','nombre'));?>                
     
     <div class="form-group">
-        <?= Html::submitButton('S   ave', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

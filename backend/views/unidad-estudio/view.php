@@ -58,6 +58,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'creditos_asignatura',
                 'label' => 'Creditos De La Asignatura ' 
             ],
+
+
             // 'des_general:ntext',
             [
                 'attribute' => 'des_general',
@@ -67,13 +69,18 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'ras_perfil:ntext',
             [
                 'attribute' => 'ras_perfil',
-                'label' => 'Rasgos del perfil ' 
+                'label' => 'Rasgos del perfil ',
+                'format' => 'raw',  // Utiliza 'raw' para permitir HTML 
             ],
             // 'sabe_profesionales:ntext',
             [
                 'attribute' => 'sabe_profesionales',
-                'label' => 'Saberes Profesionales ' 
+                'label' => 'Saberes Profesionales ',
+                'format' => 'raw',  // Utiliza 'raw' para permitir HTML 
             ],
+
+
+
             // 'elem_universo:ntext',
             [
                 'attribute' => 'elem_universo',
