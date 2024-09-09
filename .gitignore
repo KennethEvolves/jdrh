@@ -4,3 +4,63 @@ vendor/itstructure/
 .\vendor\composer
 .\vendor\yiisoft
 .\vendor\symfony
+
+# Composer dependencies
+/vendor
+/composer.lock
+/composer.phar
+
+# PHPStorm project files
+.idea
+
+# NetBeans project files
+nbproject
+
+# Zend Studio for Eclipse project files
+.buildpath
+.project
+.settings
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store
+
+# PHPUnit
+phpunit.phar
+/phpunit.xml
+/phpunit.xml.dist
+.phpunit.result.cache
+/tests/bootstrap.local.php
+/tests/runtime
+/tests/data/config.local.php
+/tests/docker
+/tests/dockerids
+
+# Node.js
+/node_modules
+/package-lock.json
+
+# Docker
+docker-compose.override.yml
+Dockerfile
+
+# Vagrant
+.vagrant
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+.env.test
+.env.test.local
+.env.development.local
+.env.production.local
+
+# Log files
+*.log
+
+# Temporary files
+/tmp
+/temp
