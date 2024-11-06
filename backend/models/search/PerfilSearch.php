@@ -14,6 +14,14 @@ class PerfilSearch extends Perfil
     public $generoNombre;
     public $genero_id;
     public $userId;
+    public $domicilio;
+    public $correo_personal;
+    public $correo_institucional;
+    public $curp;
+    public $numero_contactoEmergencia;
+    public $maya_hablante;
+    public $ciudad_nacimiento;
+    public $estado_nacimiento;
 
     /**
      * {@inheritdoc}
@@ -22,7 +30,20 @@ class PerfilSearch extends Perfil
     {
         return [
             [['id', 'genero_id'], 'integer'],
-            [['nombre', 'apellido', 'fecha_nacimiento', 'generoNombre', 'userId'], 'safe'],
+            [['nombre',
+            'apellido',
+            'fecha_nacimiento', 
+            'generoNombre',
+            'userId', 
+            'domicilio', 
+            'correo_personal', 
+            'correo_insittucional',
+            'curp',
+            'numero_contactoEmergencia',
+            'maya_hablante',
+            'ciudad_nacimiento',
+            'estado_nacimiento',
+        ], 'safe'],
         ];
     }
 
@@ -81,6 +102,14 @@ class PerfilSearch extends Perfil
                     'desc' => ['user.username' => SORT_DESC],
                     'label' => 'User'
                 ],
+                'domicilio',
+                'correo_personal',
+                'correo_institucional',
+                'curp',
+                'numero_contactoEmergencia',
+                'maya_hablante',
+                'ciudad_nacimiento',
+                'estado_nacimiento',
             ]
         ]);
 
@@ -104,6 +133,14 @@ class PerfilSearch extends Perfil
         $this->addSearchParameter($query, 'created_at');
         $this->addSearchParameter($query, 'updated_at');
         $this->addSearchParameter($query, 'user_id');
+        $this->addSearchParameter($query, 'domicilio');
+        $this->addSearchParameter($query, 'correo_personal');
+        $this->addSearchParameter($query, 'correo_institucional');
+        $this->addSearchParameter($query, 'curp');
+        $this->addSearchParameter($query, 'numero_contactoEmergencia');
+        $this->addSearchParameter($query, 'maya_hablante');
+        $this->addSearchParameter($query, 'ciudad_nacimiento');
+        $this->addSearchParameter($query, 'estado_nacimiento');
 
         // filter by genero nombre
 

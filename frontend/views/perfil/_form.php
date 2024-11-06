@@ -36,6 +36,16 @@ use  yii\jui\DatePicker;
     <!-- Agrega el campo 'pagina_web' -->
     <?= $form->field($model, 'pagina_web')->textInput(['maxlength' => 255]) ?>
 
+    <!-- Agrega el campo 'domicilio' -->
+    <?= $form->field($model, 'domicilio')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'correo_personal')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'correo_institucional')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'curp')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'numero_contactoEmergencia')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'maya_hablante')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'ciudad_nacimiento')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'estado_nacimiento')->textInput(['maxlength' => true]) ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

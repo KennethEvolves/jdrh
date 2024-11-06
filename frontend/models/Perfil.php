@@ -26,6 +26,7 @@ use yii\helpers\Html;
  * @property string $updated_at
  *
  * @property Genero $genero
+ * @property string $domicilio
  */
 class Perfil extends \yii\db\ActiveRecord
 {
@@ -67,7 +68,15 @@ class Perfil extends \yii\db\ActiveRecord
             [['telefono'],'integer'],
             [['pagina_web'], 'string'],
             [['fecha_nacimiento', 'created_at', 'updated_at'], 'safe'],
-            [['fecha_nacimiento'], 'date', 'format'=>'yyyy-MM-dd']
+            [['fecha_nacimiento'], 'date', 'format'=>'yyyy-MM-dd'],
+            [['domicilio'], 'string'],
+            [['correo_personal'], 'string'],
+            [['correo_institucional'], 'string'],
+            [['curp'], 'string'],
+            [['numero_contactoEmergencia'], 'string'],
+            [['maya_hablante'], 'boolean'],
+            [['ciudad_nacimiento'], 'string'],
+            [['estado_nacimiento'], 'string'],
         ];
     }
 
@@ -88,6 +97,14 @@ class Perfil extends \yii\db\ActiveRecord
             'generoNombre' => Yii::t('app', 'Genero'),
             'userLink' => Yii::t('app', 'User'),
             'perfilIdLink' => Yii::t('app', 'Perfil'),
+            'domicilio' => 'Domicilio',
+            'correo_personal' => 'Correo Personal',
+            'correo_institucional' => 'Correo Institucional',
+            'curp' => 'Curp',
+            'numero_contactoEmergencia' => 'Numero Contacto Emergencia',
+            'maya_hablante' => 'Maya Hablante',
+            'ciudad_nacimiento' => 'Ciudad Nacimiento',
+            'estado_nacimiento' => 'Estado Nacimiento',
         ];
     }
 

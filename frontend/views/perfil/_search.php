@@ -25,6 +25,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'fecha_nacimiento') ?>
 
+    <?= $form->field($model, 'domicilio') ?>
+    <?= $form->field($model, 'correo_personal') ?>
+    <?= $form->field($model, 'correo_institucional') ?>
+    <?= $form->field($model, 'curp') ?>
+    <?= $form->field($model, 'numero_contactoEmergencia') ?>
+    <?= $form->field($model, 'maya_hablante') ?>
+    <?= $form->field($model, 'ciudad_nacimiento') ?>
+    <?= $form->field($model, 'estado_nacimiento') ?>
+
     <?php // echo $form->field($model, 'genero_id') ?>
 
     <?php // echo $form->field($model, 'created_at') ?>
