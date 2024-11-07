@@ -17,8 +17,8 @@ class DatosGeneralesSearch extends DatosGenerales
     public function rules()
     {
         return [
-            [['iddatos_generales'], 'integer'],
-            [['licenciatura', 'generacion', 'nombre_padre', 'ocupcion_padre', 'nombre_madre', 'ocupacion_madre', 'telefono', 'lugar_nacimiento'], 'safe'],
+            [['iddatos_generales', 'id_expediente', 'capacitacion_previa', 'talleres_interes', 'tiempo_formacionIntegral', 'primera_opcion_licenciatura', 'cursas_eleccionLicenciatura', 'tiempo_estudio', 'id_motivosEstudioLicenciatura'], 'integer'],
+            [['licenciatura', 'generacion', 'aspectos_sobresalientesEscuela', 'areas_oportunidadEscuela', 'preparatoria', 'estudios_adicionales', 'posible_licenciaturaGusto', 'proyectoVida_cincoAños', 'proyectoVida_diezAños', 'actividad_extracurricular', 'observaciones_sugerencias'], 'safe'],
         ];
     }
 
@@ -59,16 +59,27 @@ class DatosGeneralesSearch extends DatosGenerales
         // grid filtering conditions
         $query->andFilterWhere([
             'iddatos_generales' => $this->iddatos_generales,
+            'id_expediente' => $this->id_expediente,
+            'capacitacion_previa' => $this->capacitacion_previa,
+            'talleres_interes' => $this->talleres_interes,
+            'tiempo_formacionIntegral' => $this->tiempo_formacionIntegral,
+            'primera_opcion_licenciatura' => $this->primera_opcion_licenciatura,
+            'cursas_eleccionLicenciatura' => $this->cursas_eleccionLicenciatura,
+            'tiempo_estudio' => $this->tiempo_estudio,
+            'id_motivosEstudioLicenciatura' => $this->id_motivosEstudioLicenciatura,
         ]);
 
         $query->andFilterWhere(['like', 'licenciatura', $this->licenciatura])
             ->andFilterWhere(['like', 'generacion', $this->generacion])
-            ->andFilterWhere(['like', 'nombre_padre', $this->nombre_padre])
-            ->andFilterWhere(['like', 'ocupcion_padre', $this->ocupcion_padre])
-            ->andFilterWhere(['like', 'nombre_madre', $this->nombre_madre])
-            ->andFilterWhere(['like', 'ocupacion_madre', $this->ocupacion_madre])
-            ->andFilterWhere(['like', 'telefono', $this->telefono])
-            ->andFilterWhere(['like', 'lugar_nacimiento', $this->lugar_nacimiento]);
+            ->andFilterWhere(['like', 'aspectos_sobresalientesEscuela', $this->aspectos_sobresalientesEscuela])
+            ->andFilterWhere(['like', 'areas_oportunidadEscuela', $this->areas_oportunidadEscuela])
+            ->andFilterWhere(['like', 'preparatoria', $this->preparatoria])
+            ->andFilterWhere(['like', 'estudios_adicionales', $this->estudios_adicionales])
+            ->andFilterWhere(['like', 'posible_licenciaturaGusto', $this->posible_licenciaturaGusto])
+            ->andFilterWhere(['like', 'proyectoVida_cincoAños', $this->proyectoVida_cincoAños])
+            ->andFilterWhere(['like', 'proyectoVida_diezAños', $this->proyectoVida_diezAños])
+            ->andFilterWhere(['like', 'actividad_extracurricular', $this->actividad_extracurricular])
+            ->andFilterWhere(['like', 'observaciones_sugerencias', $this->observaciones_sugerencias]);
 
         return $dataProvider;
     }

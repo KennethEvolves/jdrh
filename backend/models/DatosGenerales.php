@@ -10,14 +10,26 @@ use Yii;
  * @property int $iddatos_generales
  * @property string|null $licenciatura
  * @property string|null $generacion
- * @property string|null $nombre_padre
- * @property string|null $ocupcion_padre
- * @property string|null $nombre_madre
- * @property string|null $ocupacion_madre
- * @property string|null $telefono
- * @property string|null $lugar_nacimiento
+ * @property int $id_expediente
+ * @property int|null $capacitacion_previa
+ * @property int|null $talleres_interes
+ * @property int|null $tiempo_formacionIntegral
+ * @property string|null $aspectos_sobresalientesEscuela
+ * @property string|null $areas_oportunidadEscuela
+ * @property string|null $preparatoria
+ * @property string|null $estudios_adicionales
+ * @property int|null $primera_opcion_licenciatura
+ * @property int|null $cursas_eleccionLicenciatura
+ * @property string|null $posible_licenciaturaGusto
+ * @property string|null $proyectoVida_cincoAños
+ * @property string|null $proyectoVida_diezAños
+ * @property string|null $actividad_extracurricular
+ * @property string|null $observaciones_sugerencias
+ * @property int|null $tiempo_estudio
+ * @property int|null $id_motivosEstudioLicenciatura
  *
- * @property Expediente[] $expedientes
+ * @property Expediente $expediente
+ * @property MotivosEstudiolicenciatura $motivosEstudioLicenciatura
  */
 class DatosGenerales extends \yii\db\ActiveRecord
 {
@@ -36,7 +48,11 @@ class DatosGenerales extends \yii\db\ActiveRecord
     {
         return [
             [['licenciatura'], 'string'],
-            [['generacion', 'nombre_padre', 'ocupcion_padre', 'nombre_madre', 'ocupacion_madre', 'telefono', 'lugar_nacimiento'], 'string', 'max' => 45],
+            [['id_expediente'], 'required'],
+            [['id_expediente', 'capacitacion_previa', 'talleres_interes', 'tiempo_formacionIntegral', 'primera_opcion_licenciatura', 'cursas_eleccionLicenciatura', 'tiempo_estudio', 'id_motivosEstudioLicenciatura'], 'integer'],
+            [['generacion', 'aspectos_sobresalientesEscuela', 'areas_oportunidadEscuela', 'preparatoria', 'estudios_adicionales', 'posible_licenciaturaGusto', 'proyectoVida_cincoAños', 'proyectoVida_diezAños', 'actividad_extracurricular', 'observaciones_sugerencias'], 'string', 'max' => 45],
+            [['id_expediente'], 'exist', 'skipOnError' => true, 'targetClass' => Expediente::class, 'targetAttribute' => ['id_expediente' => 'idexpediente']],
+            [['id_motivosEstudioLicenciatura'], 'exist', 'skipOnError' => true, 'targetClass' => MotivosEstudiolicenciatura::class, 'targetAttribute' => ['id_motivosEstudioLicenciatura' => 'id_motivosEstudioLicenciatura']],
         ];
     }
 
@@ -49,22 +65,43 @@ class DatosGenerales extends \yii\db\ActiveRecord
             'iddatos_generales' => 'Iddatos Generales',
             'licenciatura' => 'Licenciatura',
             'generacion' => 'Generacion',
-            'nombre_padre' => 'Nombre Padre',
-            'ocupcion_padre' => 'Ocupcion Padre',
-            'nombre_madre' => 'Nombre Madre',
-            'ocupacion_madre' => 'Ocupacion Madre',
-            'telefono' => 'Telefono',
-            'lugar_nacimiento' => 'Lugar Nacimiento',
+            'id_expediente' => 'Id Expediente',
+            'capacitacion_previa' => 'Capacitacion Previa',
+            'talleres_interes' => 'Talleres Interes',
+            'tiempo_formacionIntegral' => 'Tiempo Formacion Integral',
+            'aspectos_sobresalientesEscuela' => 'Aspectos Sobresalientes Escuela',
+            'areas_oportunidadEscuela' => 'Areas Oportunidad Escuela',
+            'preparatoria' => 'Preparatoria',
+            'estudios_adicionales' => 'Estudios Adicionales',
+            'primera_opcion_licenciatura' => 'Primera Opcion Licenciatura',
+            'cursas_eleccionLicenciatura' => 'Cursas Eleccion Licenciatura',
+            'posible_licenciaturaGusto' => 'Posible Licenciatura Gusto',
+            'proyectoVida_cincoAños' => 'Proyecto Vida Cinco Años',
+            'proyectoVida_diezAños' => 'Proyecto Vida Diez Años',
+            'actividad_extracurricular' => 'Actividad Extracurricular',
+            'observaciones_sugerencias' => 'Observaciones Sugerencias',
+            'tiempo_estudio' => 'Tiempo Estudio',
+            'id_motivosEstudioLicenciatura' => 'Id Motivos Estudio Licenciatura',
         ];
     }
 
     /**
-     * Gets query for [[Expedientes]].
+     * Gets query for [[Expediente]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getExpedientes()
+    public function getExpediente()
     {
-        return $this->hasMany(Expediente::class, ['id_generales' => 'iddatos_generales']);
+        return $this->hasOne(Expediente::class, ['idexpediente' => 'id_expediente']);
+    }
+
+    /**
+     * Gets query for [[MotivosEstudioLicenciatura]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMotivosEstudioLicenciatura()
+    {
+        return $this->hasOne(MotivosEstudiolicenciatura::class, ['id_motivosEstudioLicenciatura' => 'id_motivosEstudioLicenciatura']);
     }
 }

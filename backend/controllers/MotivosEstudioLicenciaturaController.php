@@ -2,16 +2,16 @@
 
 namespace backend\controllers;
 
-use backend\models\DatosGenerales;
-use backend\models\search\DatosGeneralesSearch;
+use backend\models\MotivosEstudioLicenciatura;
+use backend\models\search\MotivosEstudioLicenciaturaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * DatosGeneralesController implements the CRUD actions for DatosGenerales model.
+ * MotivosEstudioLicenciaturaController implements the CRUD actions for MotivosEstudioLicenciatura model.
  */
-class DatosGeneralesController extends Controller
+class MotivosEstudioLicenciaturaController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class DatosGeneralesController extends Controller
     }
 
     /**
-     * Lists all DatosGenerales models.
+     * Lists all MotivosEstudioLicenciatura models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new DatosGeneralesSearch();
+        $searchModel = new MotivosEstudioLicenciaturaSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,30 +48,30 @@ class DatosGeneralesController extends Controller
     }
 
     /**
-     * Displays a single DatosGenerales model.
-     * @param int $iddatos_generales Iddatos Generales
+     * Displays a single MotivosEstudioLicenciatura model.
+     * @param int $id_motivosEstudioLicenciatura Id Motivos Estudio Licenciatura
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($iddatos_generales)
+    public function actionView($id_motivosEstudioLicenciatura)
     {
         return $this->render('view', [
-            'model' => $this->findModel($iddatos_generales),
+            'model' => $this->findModel($id_motivosEstudioLicenciatura),
         ]);
     }
 
     /**
-     * Creates a new DatosGenerales model.
+     * Creates a new MotivosEstudioLicenciatura model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new DatosGenerales();
+        $model = new MotivosEstudioLicenciatura();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'iddatos_generales' => $model->iddatos_generales]);
+                return $this->redirect(['view', 'id_motivosEstudioLicenciatura' => $model->id_motivosEstudioLicenciatura]);
             }
         } else {
             $model->loadDefaultValues();
@@ -83,18 +83,18 @@ class DatosGeneralesController extends Controller
     }
 
     /**
-     * Updates an existing DatosGenerales model.
+     * Updates an existing MotivosEstudioLicenciatura model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $iddatos_generales Iddatos Generales
+     * @param int $id_motivosEstudioLicenciatura Id Motivos Estudio Licenciatura
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($iddatos_generales)
+    public function actionUpdate($id_motivosEstudioLicenciatura)
     {
-        $model = $this->findModel($iddatos_generales);
+        $model = $this->findModel($id_motivosEstudioLicenciatura);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'iddatos_generales' => $model->iddatos_generales]);
+            return $this->redirect(['view', 'id_motivosEstudioLicenciatura' => $model->id_motivosEstudioLicenciatura]);
         }
 
         return $this->render('update', [
@@ -103,29 +103,29 @@ class DatosGeneralesController extends Controller
     }
 
     /**
-     * Deletes an existing DatosGenerales model.
+     * Deletes an existing MotivosEstudioLicenciatura model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $iddatos_generales Iddatos Generales
+     * @param int $id_motivosEstudioLicenciatura Id Motivos Estudio Licenciatura
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($iddatos_generales)
+    public function actionDelete($id_motivosEstudioLicenciatura)
     {
-        $this->findModel($iddatos_generales)->delete();
+        $this->findModel($id_motivosEstudioLicenciatura)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the DatosGenerales model based on its primary key value.
+     * Finds the MotivosEstudioLicenciatura model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $iddatos_generales Iddatos Generales
-     * @return DatosGenerales the loaded model
+     * @param int $id_motivosEstudioLicenciatura Id Motivos Estudio Licenciatura
+     * @return MotivosEstudioLicenciatura the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($iddatos_generales)
+    protected function findModel($id_motivosEstudioLicenciatura)
     {
-        if (($model = DatosGenerales::findOne(['iddatos_generales' => $iddatos_generales])) !== null) {
+        if (($model = MotivosEstudioLicenciatura::findOne(['id_motivosEstudioLicenciatura' => $id_motivosEstudioLicenciatura])) !== null) {
             return $model;
         }
 
