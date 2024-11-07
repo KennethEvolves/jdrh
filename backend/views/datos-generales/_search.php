@@ -21,17 +21,39 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'generacion') ?>
 
-    <?= $form->field($model, 'nombre_padre') ?>
+    <?= $form->field($model, 'id_expediente') ?>
 
-    <?= $form->field($model, 'ocupcion_padre') ?>
+    <?= $form->field($model, 'capacitacion_previa') ?>
 
-    <?php // echo $form->field($model, 'nombre_madre') ?>
+    <?php // echo $form->field($model, 'talleres_interes') ?>
 
-    <?php // echo $form->field($model, 'ocupacion_madre') ?>
+    <?php // echo $form->field($model, 'tiempo_formacionIntegral') ?>
 
-    <?php // echo $form->field($model, 'telefono') ?>
+    <?php // echo $form->field($model, 'aspectos_sobresalientesEscuela') ?>
 
-    <?php // echo $form->field($model, 'lugar_nacimiento') ?>
+    <?php // echo $form->field($model, 'areas_oportunidadEscuela') ?>
+
+    <?php // echo $form->field($model, 'preparatoria') ?>
+
+    <?php // echo $form->field($model, 'estudios_adicionales') ?>
+
+    <?php // echo $form->field($model, 'primera_opcion_licenciatura') ?>
+
+    <?php // echo $form->field($model, 'cursas_eleccionLicenciatura') ?>
+
+    <?php // echo $form->field($model, 'posible_licenciaturaGusto') ?>
+
+    <?php // echo $form->field($model, 'proyectoVida_cincoAños') ?>
+
+    <?php // echo $form->field($model, 'proyectoVida_diezAños') ?>
+
+    <?php // echo $form->field($model, 'actividad_extracurricular') ?>
+
+    <?php // echo $form->field($model, 'observaciones_sugerencias') ?>
+
+    <?php // echo $form->field($model, 'tiempo_estudio') ?>
+
+    <?php // echo $form->field($model, 'id_motivosEstudioLicenciatura') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

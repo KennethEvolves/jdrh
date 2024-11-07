@@ -163,7 +163,7 @@ class PerfilController extends Controller
 
     public function actionUpdate()
     {
-        PermisosHelpers::requerirUpgradeA('Pago');  
+        PermisosHelpers::requerirUpgradeA('Gratuito');  
         
         if($model =  Perfil::find()->where(['user_id' =>Yii::$app->user->identity->id])->one()) {
             

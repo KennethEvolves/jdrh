@@ -52,6 +52,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'created_at',
             'updated_at',
             'id',
+            'domicilio',
+            'correo_personal',
+            'correo_institucional',
+            'curp',
+            'numero_contactoEmergencia',
+            'maya_hablante',
+            'ciudad_nacimiento',
+            'estado_nacimiento',
         ],
     ])?>
 

@@ -35,6 +35,31 @@ use  yii\jui\DatePicker;
 
     <!-- Agrega el campo 'pagina_web' -->
     <?= $form->field($model, 'pagina_web')->textInput(['maxlength' => 255]) ?>
+
+    <!-- Agrega el campo 'domicilio' -->
+    <?= $form->field($model, 'domicilio')->textInput(['maxlength' => true]) ?>
+
+    <!-- Agrega el campo 'correo_personal' -->
+    <?= $form->field($model, 'correo_personal')->textInput(['maxlength' => true]) ?>
+
+    <!-- Agrega el campo 'correo_institucional' -->
+    <?= $form->field($model, 'correo_institucional')->textInput(['maxlength' => true]) ?>
+
+    <!-- Agrega el campo 'curp' -->
+    <?= $form->field($model, 'curp')->textInput(['maxlength' => 18]) ?>
+
+    <!-- Agrega el campo 'numero_contactoEmergencia' -->
+    <?= $form->field($model, 'numero_contactoEmergencia')->textInput() ?>
+
+    <!-- Agrega el campo 'maya_hablante' -->
+    <?= $form->field($model, 'maya_hablante')->textInput() ?>
+
+    <!-- Agrega el campo 'ciudad_nacimiento' -->
+    <?= $form->field($model, 'ciudad_nacimiento')->textInput(['maxlength' => 45]) ?>
+
+    <!-- Agrega el campo 'estado_nacimiento' -->
+    <?= $form->field($model, 'estado_nacimiento')->textInput(['maxlength' => 45]) ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
