@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var backend\models\Alimentacion $model */
 
-$this->title = 'Create Alimentacion';
-$this->params['breadcrumbs'][] = ['label' => 'Alimentacions', 'url' => ['index']];
+$this->title = 'Formulario Alimentación';
+$this->params['breadcrumbs'][] = ['label' => 'Alimentacion', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="alimentacion-create">

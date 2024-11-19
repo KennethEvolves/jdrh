@@ -28,7 +28,7 @@ use  yii\jui\DatePicker;
     <!-- <?= $form->field($model, 'fecha_nacimiento')->textInput() ?>
     * por favor use el formato YYYY-MM-DD -->
 
-    <?= $form->field($model, 'genero_id')->dropDownList($model->generoLista, ['prompt' => 'Seleccione el genero' ]);?>
+    <?= $form->field($model, 'genero_id')->dropDownList($model->generoLista, ['prompt' => 'Seleccione el genero' ]) ->label('Genero');?>
 
     <!-- Agrega el campo 'telefono' -->
     <?= $form->field($model, 'telefono')->textInput() ?>

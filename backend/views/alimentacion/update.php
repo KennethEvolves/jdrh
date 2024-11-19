@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var backend\models\Alimentacion $model */
 
-$this->title = 'Update Alimentacion: ' . $model->idcomida;
-$this->params['breadcrumbs'][] = ['label' => 'Alimentacions', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->idcomida, 'url' => ['view', 'idcomida' => $model->idcomida]];
+$this->title = 'Update Alimentacion: ' . $model->id_alimentacion;
+$this->params['breadcrumbs'][] = ['label' => 'Alimentacion', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->id_alimentacion, 'url' => ['view', 'id_alimentacion' => $model->id_alimentacion]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="alimentacion-update">

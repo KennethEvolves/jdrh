@@ -17,7 +17,7 @@ class AlimentacionSearch extends Alimentacion
     public function rules()
     {
         return [
-            [['idcomida'], 'integer'],
+            [['id_alimentacion', 'id_lugarAlimentacion', 'id_frecuenciaConsumo'], 'integer'],
         ];
     }
 
@@ -57,7 +57,9 @@ class AlimentacionSearch extends Alimentacion
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'idcomida' => $this->idcomida,
+            'id_alimentacion' => $this->id_alimentacion,
+            'id_lugarAlimentacion' => $this->id_lugarAlimentacion,
+            'id_frecuenciaConsumo' => $this->id_frecuenciaConsumo,
         ]);
 
         return $dataProvider;

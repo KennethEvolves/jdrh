@@ -114,7 +114,32 @@ FontAwesomeAsset::register($this);
                         ['label' => 'Tipo Estadocivil ', 'url' => ['/tipo-estadocivil']],
                         ['label' => 'Datos Familiares ', 'url' => ['/datos-familiares']]
                         ]
-            ];   
+            ]; 
+            $menuItems[] = ['label' => 'Fany', 'url' => ['/site/index'],
+            'options' =>['class' =>'dropdown'],
+            'template'=>'<a href="{url}" class="href_class">{label}</a>',
+            'items' =>[ ['label' => 'Ambiente Socioeconomico ', 'url' => ['/ambiente-socioeconomico']],
+                        ['label' => 'Alimentación', 'url' => ['/alimentacion']],
+                        ]
+            ];
+            $menuItems[] = ['label' => 'Javier', 'url' => ['/site/index'],
+            'options' =>['class' =>'dropdown'],
+            'template'=>'<a href="{url}" class="href_class">{label}</a>',
+            'items' =>[ ['label' => 'Hábitos ', 'url' => ['/habitos']],
+                        ['label' => 'Recreación y tiempo libre', 'url' => ['/recreacion-y-tiempo-libre']],
+                        ['label' => 'Ejercicio y deporte', 'url' => ['/ejercicio-y-deporte']]
+                        ]
+            ]; 
+
+            $menuItems[] = ['label' => 'Fernando', 'url' => ['/site/index'],
+            'options' =>['class' =>'dropdown'],
+            'template'=>'<a href="{url}" class="href_class">{label}</a>',
+            'items' =>[ ['label' => 'Salud ', 'url' => ['/salud']],
+                        //['label' => 'Recreación y tiempo libre', 'url' => ['/recreacion-y-tiempo-libre']],
+                        //['label' => 'Ejercicio y deporte', 'url' => ['/ejercicio-y-deporte']]
+                        ]
+            ]; 
+
         // echo Html::tag('div',Html::a('Usuarios',['/user/index'],
         //                                 ['class' => ['btn btn-link login text-decoration-none']]),
         //                                 ['class' => ['d-flex']]);

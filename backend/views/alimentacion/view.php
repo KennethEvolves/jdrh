@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var backend\models\Alimentacion $model */
 
-$this->title = $model->idcomida;
-$this->params['breadcrumbs'][] = ['label' => 'Alimentacions', 'url' => ['index']];
+$this->title = $model->id_alimentacion;
+$this->params['breadcrumbs'][] = ['label' => 'Alimentación', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'idcomida' => $model->idcomida], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'idcomida' => $model->idcomida], [
+        <?= Html::a('Actualizar', ['update', 'id_alimentacion' => $model->id_alimentacion], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Eliminar', ['delete', 'id_alimentacion' => $model->id_alimentacion], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '¿Estas seguro de querer eliminar este item?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,7 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idcomida',
+            'id_alimentacion',
+            'id_lugarAlimentacion',
+            'id_frecuenciaConsumo',
         ],
     ]) ?>
 

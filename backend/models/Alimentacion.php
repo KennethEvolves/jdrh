@@ -7,11 +7,12 @@ use Yii;
 /**
  * This is the model class for table "alimentacion".
  *
- * @property int $idcomida
+ * @property int $id_alimentacion
+ * @property int $id_lugarAlimentacion
+ * @property int $id_frecuenciaConsumo
  *
- * @property Expediente[] $expedientes
- * @property FrecuenciaConsumo[] $frecuenciaConsumos
- * @property LugarComo[] $lugarComos
+ * @property FrecuenciaConsumo $frecuenciaConsumo
+ * @property LugarAlimentacion $lugarAlimentacion
  */
 class Alimentacion extends \yii\db\ActiveRecord
 {
@@ -28,7 +29,12 @@ class Alimentacion extends \yii\db\ActiveRecord
      */
     public function rules()
     {
-        return [];
+        return [
+            [['id_lugarAlimentacion', 'id_frecuenciaConsumo'], 'required'],
+            [['id_lugarAlimentacion', 'id_frecuenciaConsumo'], 'integer'],
+            [['id_frecuenciaConsumo'], 'exist', 'skipOnError' => true, 'targetClass' => FrecuenciaConsumo::class, 'targetAttribute' => ['id_frecuenciaConsumo' => 'id_frecuenciaConsumo']],
+            [['id_lugarAlimentacion'], 'exist', 'skipOnError' => true, 'targetClass' => LugarAlimentacion::class, 'targetAttribute' => ['id_lugarAlimentacion' => 'id_lugarAlimentacion']],
+        ];
     }
 
     /**
@@ -37,37 +43,29 @@ class Alimentacion extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idcomida' => 'Idcomida',
+            'id_alimentacion' => 'Id Alimentacion',
+            'id_lugarAlimentacion' => 'Id Lugar Alimentacion',
+            'id_frecuenciaConsumo' => 'Id Frecuencia Consumo',
         ];
     }
 
     /**
-     * Gets query for [[Expedientes]].
+     * Gets query for [[FrecuenciaConsumo]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getExpedientes()
+    public function getFrecuenciaConsumo()
     {
-        return $this->hasMany(Expediente::class, ['id_comida' => 'idcomida']);
+        return $this->hasOne(FrecuenciaConsumo::class, ['id_frecuenciaConsumo' => 'id_frecuenciaConsumo']);
     }
 
     /**
-     * Gets query for [[FrecuenciaConsumos]].
+     * Gets query for [[LugarAlimentacion]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getFrecuenciaConsumos()
+    public function getLugarAlimentacion()
     {
-        return $this->hasMany(FrecuenciaConsumo::class, ['alimentacion_idcomida' => 'idcomida']);
-    }
-
-    /**
-     * Gets query for [[LugarComos]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getLugarComos()
-    {
-        return $this->hasMany(LugarComo::class, ['alimentacion_idcomida' => 'idcomida']);
+        return $this->hasOne(LugarAlimentacion::class, ['id_lugarAlimentacion' => 'id_lugarAlimentacion']);
     }
 }

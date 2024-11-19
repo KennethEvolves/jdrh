@@ -49,14 +49,14 @@ class AlimentacionController extends Controller
 
     /**
      * Displays a single Alimentacion model.
-     * @param int $idcomida Idcomida
+     * @param int $id_alimentacion Id Alimentacion
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($idcomida)
+    public function actionView($id_alimentacion)
     {
         return $this->render('view', [
-            'model' => $this->findModel($idcomida),
+            'model' => $this->findModel($id_alimentacion),
         ]);
     }
 
@@ -71,7 +71,7 @@ class AlimentacionController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'idcomida' => $model->idcomida]);
+                return $this->redirect(['view', 'id_alimentacion' => $model->id_alimentacion]);
             }
         } else {
             $model->loadDefaultValues();
@@ -85,16 +85,16 @@ class AlimentacionController extends Controller
     /**
      * Updates an existing Alimentacion model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $idcomida Idcomida
+     * @param int $id_alimentacion Id Alimentacion
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($idcomida)
+    public function actionUpdate($id_alimentacion)
     {
-        $model = $this->findModel($idcomida);
+        $model = $this->findModel($id_alimentacion);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'idcomida' => $model->idcomida]);
+            return $this->redirect(['view', 'id_alimentacion' => $model->id_alimentacion]);
         }
 
         return $this->render('update', [
@@ -105,13 +105,13 @@ class AlimentacionController extends Controller
     /**
      * Deletes an existing Alimentacion model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $idcomida Idcomida
+     * @param int $id_alimentacion Id Alimentacion
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($idcomida)
+    public function actionDelete($id_alimentacion)
     {
-        $this->findModel($idcomida)->delete();
+        $this->findModel($id_alimentacion)->delete();
 
         return $this->redirect(['index']);
     }
@@ -119,13 +119,13 @@ class AlimentacionController extends Controller
     /**
      * Finds the Alimentacion model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $idcomida Idcomida
+     * @param int $id_alimentacion Id Alimentacion
      * @return Alimentacion the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($idcomida)
+    protected function findModel($id_alimentacion)
     {
-        if (($model = Alimentacion::findOne(['idcomida' => $idcomida])) !== null) {
+        if (($model = Alimentacion::findOne(['id_alimentacion' => $id_alimentacion])) !== null) {
             return $model;
         }
 

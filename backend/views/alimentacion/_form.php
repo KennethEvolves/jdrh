@@ -12,10 +12,12 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'idcomida')->textInput() ?>
+    <?= $form->field($model, 'id_lugarAlimentacion')->textInput()->label('¿Dónde acostumbras comer?')//casa,escuela,trabajo,calle,otro ?>
+
+    <?= $form->field($model, 'id_frecuenciaConsumo')->textInput()->label('¿Con qué frecuencia consumes estos alimentos?') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
