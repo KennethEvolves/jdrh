@@ -28,13 +28,23 @@ use  yii\jui\DatePicker;
     <!-- <?= $form->field($model, 'fecha_nacimiento')->textInput() ?>
     * por favor use el formato YYYY-MM-DD -->
 
-    <?= $form->field($model, 'genero_id')->dropDownList($model->generoLista, ['prompt' => 'Seleccione el genero' ]);?>
+    <?= $form->field($model, 'genero_id')->dropDownList($model->generoLista, ['prompt' => 'Seleccione el genero' ]) ->label('Genero');?>
 
     <!-- Agrega el campo 'telefono' -->
     <?= $form->field($model, 'telefono')->textInput() ?>
 
     <!-- Agrega el campo 'pagina_web' -->
     <?= $form->field($model, 'pagina_web')->textInput(['maxlength' => 255]) ?>
+
+    <!-- Agrega el campo 'domicilio' -->
+    <?= $form->field($model, 'domicilio')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'correo_personal')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'correo_institucional')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'curp')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'numero_contactoEmergencia')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'maya_hablante')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'ciudad_nacimiento')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'estado_nacimiento')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
