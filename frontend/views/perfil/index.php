@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Perfil', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear perfil', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'correo_personal',
             'correo_institucional',
             'curp',
-            'numero_contactoEmergencia',
+            'tel_emerg_principal',
             'maya_hablante',
             'ciudad_nacimiento',
             'estado_nacimiento',

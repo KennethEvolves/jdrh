@@ -29,7 +29,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'correo_personal') ?>
     <?= $form->field($model, 'correo_institucional') ?>
     <?= $form->field($model, 'curp') ?>
-    <?= $form->field($model, 'numero_contactoEmergencia') ?>
+    <?= $form->field($model, 'tel_emerg_principal') ?>
     <?= $form->field($model, 'maya_hablante') ?>
     <?= $form->field($model, 'ciudad_nacimiento') ?>
     <?= $form->field($model, 'estado_nacimiento') ?>

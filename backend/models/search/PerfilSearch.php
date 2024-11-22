@@ -18,7 +18,7 @@ class PerfilSearch extends Perfil
     public $correo_personal;
     public $correo_institucional;
     public $curp;
-    public $numero_contactoEmergencia;
+    public $tel_emerg_principal;
     public $maya_hablante;
     public $ciudad_nacimiento;
     public $estado_nacimiento;
@@ -39,7 +39,7 @@ class PerfilSearch extends Perfil
             'correo_personal', 
             'correo_insittucional',
             'curp',
-            'numero_contactoEmergencia',
+            'tel_emerg_principal',
             'maya_hablante',
             'ciudad_nacimiento',
             'estado_nacimiento',
@@ -106,7 +106,7 @@ class PerfilSearch extends Perfil
                 'correo_personal',
                 'correo_institucional',
                 'curp',
-                'numero_contactoEmergencia',
+                'tel_emerg_principal',
                 'maya_hablante',
                 'ciudad_nacimiento',
                 'estado_nacimiento',
@@ -137,7 +137,7 @@ class PerfilSearch extends Perfil
         $this->addSearchParameter($query, 'correo_personal');
         $this->addSearchParameter($query, 'correo_institucional');
         $this->addSearchParameter($query, 'curp');
-        $this->addSearchParameter($query, 'numero_contactoEmergencia');
+        $this->addSearchParameter($query, 'tel_emerg_principal');
         $this->addSearchParameter($query, 'maya_hablante');
         $this->addSearchParameter($query, 'ciudad_nacimiento');
         $this->addSearchParameter($query, 'estado_nacimiento');

@@ -14,7 +14,7 @@ use yii\helpers\Html;
 /**
  * This is the model class for table "perfil".
  *
- * @property string $id
+ * @property string $perfil_id
  * @property string $user_id
  * @property string $nombre
  * @property string $apellido
@@ -24,7 +24,7 @@ use yii\helpers\Html;
  * @property integer $genero_id
  * @property string $created_at
  * @property string $updated_at
- *
+ * @property string $tel_emerg_principal
  * @property Genero $genero
  * @property string $domicilio
  */
@@ -73,7 +73,7 @@ class Perfil extends \yii\db\ActiveRecord
             [['correo_personal'], 'string'],
             [['correo_institucional'], 'string'],
             [['curp'], 'string'],
-            [['numero_contactoEmergencia'], 'string'],
+            [['tel_emerg_principal'], 'string'],
             [['maya_hablante'], 'boolean'],
             [['ciudad_nacimiento'], 'string'],
             [['estado_nacimiento'], 'string'],
@@ -90,21 +90,21 @@ class Perfil extends \yii\db\ActiveRecord
             'user_id' => 'User ID',
             'nombre' => 'Nombre',
             'apellido' => 'Apellido',
-            'fecha_nacimiento' => 'Fecha Nacimiento',
-            'pagina_web' => 'Pagina Web',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'fecha_nacimiento' => 'Fecha nacimiento',
+            'pagina_web' => 'Pagina web',
+            'created_at' => 'Fecha de creación',
+            'updated_at' => 'Fecha de actualización',
             'generoNombre' => Yii::t('app', 'Genero'),
             'userLink' => Yii::t('app', 'User'),
             'perfilIdLink' => Yii::t('app', 'Perfil'),
             'domicilio' => 'Domicilio',
-            'correo_personal' => 'Correo Personal',
-            'correo_institucional' => 'Correo Institucional',
+            'correo_personal' => 'Correo personal',
+            'correo_institucional' => 'Correo institucional',
             'curp' => 'Curp',
-            'numero_contactoEmergencia' => 'Numero Contacto Emergencia',
-            'maya_hablante' => 'Maya Hablante',
-            'ciudad_nacimiento' => 'Ciudad Nacimiento',
-            'estado_nacimiento' => 'Estado Nacimiento',
+            'tel_emerg_principal' => 'Contacto emergencia principal',
+            'maya_hablante' => 'Maya hablante',
+            'ciudad_nacimiento' => 'Ciudad nacimiento',
+            'estado_nacimiento' => 'Estado nacimiento',
         ];
     }
 

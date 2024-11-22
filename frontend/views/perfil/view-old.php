@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'correo_personal',
             'correo_institucional',
             'curp',
-            'numero_contactoEmergencia',
+            'tel_emerg_principal',
             'maya_hablante',
             'ciudad_nacimiento',
             'estado_nacimiento',

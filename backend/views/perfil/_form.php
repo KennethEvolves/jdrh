@@ -49,7 +49,7 @@ use  yii\jui\DatePicker;
     <?= $form->field($model, 'curp')->textInput(['maxlength' => 18]) ?>
 
     <!-- Agrega el campo 'numero_contactoEmergencia' -->
-    <?= $form->field($model, 'numero_contactoEmergencia')->textInput() ?>
+    <?= $form->field($model, 'tel_emerg_principal')->textInput() ?>
 
     <!-- Agrega el campo 'maya_hablante' -->
     <?= $form->field($model, 'maya_hablante')->textInput() ?>

@@ -13,7 +13,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'estado_id')->dropDownList($model->estadoLista, [ 'prompt' => 'Por Favor Elija Uno' ]);?>
+    <?= $form->field($model, 'estado_id')->dropDownList($model->EstadoLista, [ 'prompt' => 'Por Favor Elija Uno' ]);?>
  
     <?= $form->field($model, 'rol_id')->dropDownList($model->rolLista, [ 'prompt' => 'Por Favor Elija Uno' ]);?>
             
