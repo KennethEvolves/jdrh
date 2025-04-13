@@ -17,8 +17,8 @@ class DatosFamiliaresSearch extends DatosFamiliares
     public function rules()
     {
         return [
-            [['iddatos_familiares', 'id_civill', 'id_tiposbeca', 'id_familiares', 'id_tipo_dependientes'], 'integer'],
-            [['estado_civil', 'numero_hijos', 'edades_hijos', 'tipo_beca', 'dependencia_economica', 'dependientes_economico', 'empresa_trabajas', 'puesto_trabajas', 'horario_trabajas'], 'safe'],
+            [['id_datosFamiliares', 'fk_estado_civil'], 'integer'],
+            [['padre_nombre', 'padre_apellido', 'padre_ocupacion', 'padre_fecha_nacimiento', 'madre_nombre', 'madre_apellido', 'madre_ocupacion', 'madre_fecha_nacimiento'], 'safe'],
         ];
     }
 
@@ -58,22 +58,18 @@ class DatosFamiliaresSearch extends DatosFamiliares
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'iddatos_familiares' => $this->iddatos_familiares,
-            'id_civill' => $this->id_civill,
-            'id_tiposbeca' => $this->id_tiposbeca,
-            'id_familiares' => $this->id_familiares,
-            'id_tipo_dependientes' => $this->id_tipo_dependientes,
+            'id_datosFamiliares' => $this->id_datosFamiliares,
+            'fk_estado_civil' => $this->fk_estado_civil,
+            'padre_fecha_nacimiento' => $this->padre_fecha_nacimiento,
+            'madre_fecha_nacimiento' => $this->madre_fecha_nacimiento,
         ]);
 
-        $query->andFilterWhere(['like', 'estado_civil', $this->estado_civil])
-            ->andFilterWhere(['like', 'numero_hijos', $this->numero_hijos])
-            ->andFilterWhere(['like', 'edades_hijos', $this->edades_hijos])
-            ->andFilterWhere(['like', 'tipo_beca', $this->tipo_beca])
-            ->andFilterWhere(['like', 'dependencia_economica', $this->dependencia_economica])
-            ->andFilterWhere(['like', 'dependientes_economico', $this->dependientes_economico])
-            ->andFilterWhere(['like', 'empresa_trabajas', $this->empresa_trabajas])
-            ->andFilterWhere(['like', 'puesto_trabajas', $this->puesto_trabajas])
-            ->andFilterWhere(['like', 'horario_trabajas', $this->horario_trabajas]);
+        $query->andFilterWhere(['like', 'padre_nombre', $this->padre_nombre])
+            ->andFilterWhere(['like', 'padre_apellido', $this->padre_apellido])
+            ->andFilterWhere(['like', 'padre_ocupacion', $this->padre_ocupacion])
+            ->andFilterWhere(['like', 'madre_nombre', $this->madre_nombre])
+            ->andFilterWhere(['like', 'madre_apellido', $this->madre_apellido])
+            ->andFilterWhere(['like', 'madre_ocupacion', $this->madre_ocupacion]);
 
         return $dataProvider;
     }

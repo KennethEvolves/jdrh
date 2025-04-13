@@ -122,7 +122,7 @@ class PerfilController extends Controller
         'methods' => [  'SetFooter' => ['|Page {PAGENO}|'],
                         // 'SetHTMLFooter' => ('<div ALIGN="center"><img src="" width="200" height="50">
                         //  Pag.{PAGENO}</div>'),
-                        'SetTitle'=>("PERFIL"),
+                        'SetTitle'=>"Perfil - " . $model->nombre . '.pdf',
                     ]
     ]);
     return $pdf->render();

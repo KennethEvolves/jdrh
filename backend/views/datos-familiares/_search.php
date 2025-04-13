@@ -8,44 +8,58 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="datos-familiares-search">
+<div class="datos-familiares-search container mt-5 p-4 border rounded shadow-sm bg-light">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'iddatos_familiares') ?>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <?= $form->field($model, 'id_datosFamiliares')->textInput([
+                'placeholder' => 'ID de datos familiares',
+                'class' => 'form-control'
+            ]) ?>
+        </div>
+        <div class="col-md-6 mb-3">
+            <?= $form->field($model, 'fk_estado_civil')->textInput([
+                'placeholder' => 'Estado Civil',
+                'class' => 'form-control'
+            ]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'estado_civil') ?>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <?= $form->field($model, 'padre_nombre')->textInput([
+                'maxlength' => true,
+                'placeholder' => 'Nombre del padre',
+                'class' => 'form-control'
+            ]) ?>
+        </div>
+        <div class="col-md-6 mb-3">
+            <?= $form->field($model, 'padre_apellido')->textInput([
+                'maxlength' => true,
+                'placeholder' => 'Apellido del padre',
+                'class' => 'form-control'
+            ]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'numero_hijos') ?>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <?= $form->field($model, 'padre_ocupacion')->textInput([
+                'maxlength' => true,
+                'placeholder' => 'Ocupación del padre',
+                'class' => 'form-control'
+            ]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'edades_hijos') ?>
-
-    <?= $form->field($model, 'tipo_beca') ?>
-
-    <?php // echo $form->field($model, 'dependencia_economica') ?>
-
-    <?php // echo $form->field($model, 'dependientes_economico') ?>
-
-    <?php // echo $form->field($model, 'empresa_trabajas') ?>
-
-    <?php // echo $form->field($model, 'puesto_trabajas') ?>
-
-    <?php // echo $form->field($model, 'horario_trabajas') ?>
-
-    <?php // echo $form->field($model, 'id_civill') ?>
-
-    <?php // echo $form->field($model, 'id_tiposbeca') ?>
-
-    <?php // echo $form->field($model, 'id_familiares') ?>
-
-    <?php // echo $form->field($model, 'id_tipo_dependientes') ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+    <div class="form-group text-center mt-4">
+        <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary btn-sm']) ?>
+        <?= Html::resetButton('Restablecer', ['class' => 'btn btn-outline-secondary btn-sm']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

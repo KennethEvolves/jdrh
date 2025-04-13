@@ -107,31 +107,30 @@ FontAwesomeAsset::register($this);
             $menuItems[] = ['label' => 'Tutorías', 'url' => ['/site/index'],
             'options' =>['class' =>'dropdown'],
             'template'=>'<a href="{url}" class="href_class">{label}</a>',
-            'items' =>[ ['label' => 'DatosGenerales ', 'url' => ['/datos-generales']],
-                        ['label' => 'Tipos Beca ', 'url' => ['/tipos-beca']],
-                        ['label' => 'Tipo Dependientes ', 'url' => ['/tipo-dependientes']],
-                        ['label' => 'Tipo Dependencia ', 'url' => ['/tipo-dependencia']],
-                        ['label' => 'Tipo Estadocivil ', 'url' => ['/tipo-estadocivil']],
-                        ['label' => 'Datos Familiares ', 'url' => ['/datos-familiares']]
-                        ]
-            ];   
-        // echo Html::tag('div',Html::a('Usuarios',['/user/index'],
-        //                                 ['class' => ['btn btn-link login text-decoration-none']]),
-        //                                 ['class' => ['d-flex']]);
+            'items' =>[ ['label' => 'DatosGenerales ', 'url' => ['/datos-generales']]]
+            ];
+
+            $menuItems[] = ['label' => 'Datos Generales', 'url' => ['/site/index'],
+            'options' =>['class' =>'dropdown'],
+            'template'=>'<a href="{url}" class="href_class">{label}</a>',
+            'items' =>[
+            ['label'=>'Perfil', 'url'=>['/perfil']],
+            ['label'=>'Informacion Academica', 'url'=>['/informacion-academica']],
+            ['label'=>'Motivos de estudio', 'url'=>['/opt-motivos-estudio']],
+            ['label'=>'Talleres de interes', 'url'=>['/opt-talleres-interes']],
+            ['label'=>'Temas de capacitacion', 'url'=>['/opt-temas-capacitacion']],
+            ['label' => 'Informacion Personal', 'url'=>['/informacion-personal']],
+            ['label' => 'Ciclo Escolar', 'url' => ['/ciclo-escolar']],
+            ['label'=>'Licenciaturas', 'url'=>['/licenciaturas']],
+            ['label'=>'Genero', 'url'=>['/genero']],
+            ['label'=>'Datos Familiares', 'url'=>['/datos-familiares']],
+            ['label'=>'Estado civil', 'url'=>['/estado-civil']],
+            ['label'=>'Percepcion de la institucion', 'url'=>['/percepcion-institucion']],
+
+            ]
+            ];
 
         // echo Html::tag('div',Html::a('Perfiles',['/perfil/index'],
-        //                                 ['class' => ['btn btn-link login text-decoration-none']]),
-        //                                 ['class' => ['d-flex']]);
-            
-        // echo Html::tag('div',Html::a('Roles',['/rol/index'],
-        //                                 ['class' => ['btn btn-link login text-decoration-none']]),
-        //                                 ['class' => ['d-flex']]);
-
-        // echo Html::tag('div',Html::a('Tipo de Usuario',['/tipo-usuario/index'],
-        //                                 ['class' => ['btn btn-link login text-decoration-none']]),
-        //                                 ['class' => ['d-flex']]);
-
-        // echo Html::tag('div',Html::a('Estados',['/estado/index'],
         //                                 ['class' => ['btn btn-link login text-decoration-none']]),
         //                                 ['class' => ['d-flex']]);
     }   
@@ -165,9 +164,12 @@ FontAwesomeAsset::register($this);
 
 <main role="main" class="flex-shrink-0">
     <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+        <div style="margin-bottom: 25px;"></div>
+        <?= Breadcrumbs::widget(
+            [
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]
+        ) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>

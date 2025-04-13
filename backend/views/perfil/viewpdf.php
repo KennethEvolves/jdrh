@@ -2,8 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
-use  common\models\PermisosHelpers;
+use common\models\PermisosHelpers;
 use yii\helpers\Url;
 use kartik\dynagrid\DynaGrid;
 use kartik\export\ExportMenu;
@@ -21,51 +20,56 @@ $this->params['breadcrumbs'][] = ['label' => 'Perfil', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="perfil-view">
+<div class="perfil-view" style="font-family: Arial, sans-serif; line-height: 1.6; padding: 20px;">
 
-    
-
-    
-<table width="100%">
-    
+    <!-- Encabezado con logo -->
+    <table width="100%" style="border-bottom: 1px solid #ccc; padding-bottom: 20px;">
         <tr>
-            <td  align="left"><img src="archivos/sies2.png" width="300" ></td>
-            <td  align="right"><img src="archivos/normal.png" width="80" ></td>
-            
-            
+            <td align="left"><img src="archivos/sies2.png" width="300" alt="Escuela Normal" ></td>
+            <td align="right"><img src="archivos/normal.png" width="80" alt="Logo" ></td>
         </tr>
-</table>
+    </table>
     
-     <h4 style="text-align: center; font-weight: bold;">Escuela Normal <br>Juan De Dios Rodriguez Heredia</h4>
-        <h4 style="text-align: center;">Reporte de Perfil</h4>
+    <!-- Títulos y subtítulos -->
+    <h2 style="text-align: center; font-weight: bold; color: #2c3e50;">Escuela Normal Juan De Dios Rodriguez Heredia</h2>
+    <h3 style="text-align: center; font-weight: normal; color: #7f8c8d;">Reporte de Perfil</h3>
+    
+    <!-- Título del perfil -->
+    <h1 style="text-align: center; font-size: 24px; margin-top: 30px;"><?= $model->nombre .' '. $model->apellido ?></h1>
 
+    <!-- Detalle del perfil con formato -->
+    <div style="margin-top: 30px;">
+        <?= DetailView::widget([
+            'model' => $model,
+            'attributes' => [
+                ['attribute'=>'userLink',  'format'=>'raw', 'label' => 'Usuario'],
+                'id',
+                'nombre:ntext',
+                'apellido:ntext',
+                'fecha_nacimiento',
+                'genero.genero_nombre',
+                'telefono',
+                'domicilio',
+                'correo_personal',
+                'correo_institucional',
+                'curp',
+                'tel_emerg_principal',
+                'maya_hablante',
+                'ciudad_nacimiento',
+                'estado_nacimiento',
+                'pagina_web',
+                'created_at',
+                'updated_at',
+            ],
+            'options' => [
+                'class' => 'table table-bordered table-striped',
+                'style' => 'width: 100%; margin-top: 20px; border: 1px solid #ddd;'
+            ],
+        ]) ?>
+    </div>
 
-        <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            ['attribute'=>'userLink',  'format'=>'raw'],
-            'id',
-            //'user_id',
-            'nombre:ntext',
-            'apellido:ntext',
-            'fecha_nacimiento',
-            'genero.genero_nombre',
-            'telefono',
-            'domicilio',
-            'correo_personal',
-            'correo_institucional',
-            'curp',
-            'tel_emerg_principal',
-            'maya_hablante',
-            'ciudad_nacimiento',
-            'estado_nacimiento',
-            'pagina_web',
-            'created_at',
-            'updated_at',
-        ],
-    ]) ?>
-
-
+    <!-- Pie de página -->
+    <div style="position: fixed; bottom: 20px; left: 0; width: 100%; text-align: center; font-size: 12px; color: #7f8c8d;">
+        <p>&copy; <?= date('Y') ?> Escuela Normal Juan De Dios Rodriguez Heredia. Todos los derechos reservados.</p>
+    </div>
 </div>
